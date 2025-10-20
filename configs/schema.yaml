@@ -1,0 +1,41 @@
+version: '1'
+
+# Strip these suffixes from column names
+strip_suffixes: [" (min)", " (sec)", " (%)", " (ms)"]
+
+# Column aliases (alternative names → standard name)
+aliases:
+  Species: ["Sample Type", "SampleType"]
+  Comments: ["Comments (note here, for example, if there are common names and official IUPAC names that are actually the same compound)"]
+
+# Old schema columns (missing Species, Compound, Class, MatchScore)
+old_schema:
+  - DataFolderName
+  - DateRun
+  - CartridgeNum
+  - RetentionTime
+  - Match1
+  - Match1.Quality
+  - Match2
+  - Match2.Quality
+  - Match3
+  - Match3.Quality
+  - Comments
+
+# New schema columns (complete)
+new_schema:
+  - DataFolderName
+  - DateRun
+  - CartridgeNum
+  - Species
+  - RetentionTime
+  - Match1
+  - Match1.Quality
+  - Match2
+  - Match2.Quality
+  - Match3
+  - Match3.Quality
+  - Comments
+  - Compound
+  - Class
+  - MatchScore
