@@ -128,7 +128,7 @@ map:
 Run via Python module (packaging to .exe is next step after MVP):
 
 ```
-python -m src.mvp \
+python -m treebot.main \
   --input <results.xlsx> \
   --classes configs/classes.yaml \
   [--mapping mapping.xlsx] \
@@ -184,4 +184,3 @@ project/
 - No UI, no warnings tier, no SQLite/CSV extras; a single standardized Excel and QC/supporting outputs.
 - No heavy frameworks (no pandera/pydantic yet); explicit, readable checks.
 - Packaging to Windows .exe follows after MVP validation.
-
