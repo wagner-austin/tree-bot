@@ -1,0 +1,158 @@
+map:
+  2-thujene: monoterpene
+  3-carene: monoterpene
+  3-thujene: monoterpene
+  a-pinene: monoterpene
+  a-terpinene: monoterpene
+  acid: organic.acid
+  al: aldehyde
+  alcohol: alcohol
+  aldehyde: aldehyde
+  alpha-pinene: monoterpene
+  alpha-terpinene: monoterpene
+  alpha-terpineol: monoterpenoid
+  amine: amine
+  ane: alkane
+  anhydride: organic.acid
+  aniline: amine
+  arsenous: metalloid
+  azetidine: amine
+  b-phellandrene: monoterpene
+  b-pinene: monoterpene
+  benzamine: amine
+  benzenamine: amine
+  benzene: aromatic
+  benzofuran: aromatic
+  beta-phellandrene: monoterpene
+  beta-pinene: monoterpene
+  borneol: monoterpenoid
+  bornyl acetate: monoterpenoid
+  bromo: halogen
+  camphene: monoterpene
+  camphor: monoterpenoid
+  carene: monoterpene
+  caryophyllene: sesquiterpene
+  chloride: halogen
+  chloro: halogen
+  cineole: monoterpenoid
+  copaene: sesquiterpene
+  cyclopentasiloxane: siloxane
+  cyclotetrasiloxane: siloxane
+  cyclotrisiloxane: siloxane
+  cymene: monoterpenoid
+  decane: alkane
+  diene: alkene
+  disila: organosilicon
+  diyne: alkyne
+  ene: alkene
+  epoxide: epoxide
+  ester: organic.acid
+  ethylbenzene: aromatic
+  eucalyptol: monoterpenoid
+  eudesma: sesquiterpene
+  fenchone: monoterpenoid
+  fluoro: halogen
+  g-terpinene: monoterpene
+  gamma-terpinene: monoterpene
+  germacrene: sesquiterpene
+  heptadiene: alkene
+  heptane: alkane
+  heptene: alkene
+  hexadiene: alkene
+  hexyne: alkyne
+  hydrazide: hydrazide
+  imidazo: heteroaromatic
+  imidazole: heteroaromatic
+  imine: imine
+  indole: heteroaromatic
+  iodo: halogen
+  isobornyl acetate: monoterpenoid
+  isoprene: terpene
+  isopropenyltoluene: monoterpenoid
+  ketone: ketone
+  limonene: monoterpene
+  longifolene: sesquiterpene
+  menthatriene: monoterpene
+  nitrile: nitrile
+  nonadecane: alkane
+  ocimene: monoterpene
+  octane: alkane
+  octene: alkene
+  ol: alcohol
+  one: ketone
+  oxide: oxide
+  oxime: oxime
+  oxirane: epoxide
+  p-cymene: monoterpenoid
+  pentadiene: alkene
+  phellandrene: monoterpene
+  phenazasiline: organosilicon
+  pinene: monoterpene
+  pinocamphone: monoterpenoid
+  pyradine: heteroaromatic
+  pyran: heteroaromatic
+  pyridine: heteroaromatic
+  quinoline: heteroaromatic
+  sabinene: monoterpene
+  sabinene hydrate: monoterpenoid
+  santolina triene: monoterpene
+  sila: organosilicon
+  silane: organosilicon
+  siloxane: siloxane
+  silyl: organosilicon
+  styrene: aromatic
+  sulfur dioxide: inorganic
+  terpinene: monoterpene
+  terpineol: monoterpenoid
+  thiocarbazide: hydrazide
+  thiol: thiol
+  thujene: monoterpene
+  thujone: monoterpenoid
+  tiglate: organic.acid
+  toluene: aromatic
+  tricyclene: monoterpene
+  triene: alkene
+  trifluorobenzene: halogen
+  triyne: alkyne
+  undecane: alkane
+  unknown: unknown
+  xylene: aromatic
+  yne: alkyne
+  α-pinene: monoterpene
+  α-terpinene: monoterpene
+  β-phellandrene: monoterpene
+  β-pinene: monoterpene
+  γ-terpinene: monoterpene
+  terpinolene: monoterpene
+  fenchene: monoterpene
+  a-fenchene: monoterpene         # α-fenchene normalized by your rules
+  α-fenchene: monoterpene
+  b-terpinene: monoterpene
+  β-terpinene: monoterpene
+  thujenone: monoterpenoid
+  thujen-2-one: monoterpenoid
+  3-thujen-2-one: monoterpenoid
+  caren-4-ol: monoterpenoid
+  2-caren-4-ol: monoterpenoid
+  tetradecane: alkane             # explicit, avoids relying on 'ane' catch-all
+  trichloromonofluoromethane: halogen
+  o-cymene: monoterpenoid
+  m-cymene: monoterpenoid
+  o-xylene: aromatic
+  m-xylene: aromatic
+  p-xylene: aromatic
+  decamethylcyclopentasiloxane: siloxane
+  hexamethylcyclotrisiloxane: siloxane
+  octamethylcyclotetrasiloxane: siloxane
+  1,2,3-trifluorobenzene: halogen
+  butyl acetate: organic.acid
+  acetic acid, butyl ester: organic.acid
+
+normalization:
+- lowercase
+- trim
+- collapse_whitespace
+- unify_hyphen_comma
+- strip_trailing_punct
+- fold_greek
+version: '1'
