@@ -1,0 +1,29 @@
+map:
+  (+)-4-Carene: 4-Carene
+  (+)-4-carene: 4-Carene
+  (+)-Borneol: borneol
+  (+)-Bornyl acetate: bornyl acetate
+  (+)-Camphene: camphene
+  (+)-Camphor: camphor
+  (+)-beta-Pinene: beta-Pinene
+  (-)-Borneol: borneol
+  (-)-Bornyl acetate: bornyl acetate
+  (-)-Camphor: camphor
+  (-)-beta-Pinene: beta-Pinene
+  (1R)-alpha-Pinene: alpha-Pinene
+  (1S)-(-)-beta-pinene: beta-Pinene
+  (1S)-alpha-Pinene: alpha-Pinene
+  (1S)-alpha-pinene: alpha-Pinene
+  1,3-Butadiene, 2-methyl-: isoprene
+  1,3-butadiene, 2-methyl: isoprene
+  D-Limonene: limonene
+  L-Limonene: limonene
+  alpha-pinene: alpha-Pinene
+  cineole: eucalyptol
+  m-Cymene: cymene
+  m-Xylene: xylene
+  o-Cymene: cymene
+  o-Xylene: xylene
+  p-Cymene: cymene
+  p-Xylene: xylene
+version: '1'

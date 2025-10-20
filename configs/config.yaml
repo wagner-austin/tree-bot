@@ -1,0 +1,8 @@
+pipeline_version: v1.0
+certainty_threshold: 80
+frequency_min: 2
+site_mode: sheetname
+strict_fail: true
+make_per_species_sheets: true
+max_errors: 50
+
