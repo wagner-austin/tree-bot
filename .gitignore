@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+*.egg
+
+# Project outputs / logs
+runs/
+
+# Packaging / build
+build/
+dist/
+wheels/
+
+# IDE / tooling
+.vscode/
+.idea/
+.DS_Store
+
+# Virtual envs
+.env
+.venv/
+venv/
+
+# Misc local
+.claude/
+src/tree_bot_mvp.egg-info/
+*.log
+
+# Node (if any)
+node_modules/
+
