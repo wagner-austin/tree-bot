@@ -1,158 +1,1055 @@
 map:
+  (+)-4-carene: monoterpene
+  (+)-agathadiol: sesquiterpene
+  (+)-beta-citronellol: monoterpenoid
+  (+)-camphene: monoterpene
+  (+)-camphor: monoterpenoid
+  (+)-cyclosativene: sesquiterpene
+  (+)-epi-bicyclosesquiphellandrene: sesquiterpene
+  (+)-norinone: monoterpenoid
+  (+)-sabinene: monoterpene
+  (+)-sativene: sesquiterpene
+  (+)-sylvestrene: monoterpene
+  (-)-alloaromadendrene: sesquiterpene
+  (-)-alpha-neoclovene: sesquiterpene
+  (-)-alpha-panasinsen: sesquiterpene
+  (-)-alpha-terpineol: monoterpenoid
+  (-)-beta-pinene: monoterpene
+  (-)-borneol: monoterpenoid
+  (-)-bornyl acetate: monoterpenoid
+  (-)-camphor: monoterpenoid
+  (-)-cis-carane: monoterpene
+  (-)-menthol: monoterpenoid
+  (-)-thujone: monoterpenoid
+  (-)-verbenone: monoterpenoid
+  (1r)-(+)-norinone: monoterpenoid
+  (1r)-alpha-pinene: monoterpene
+  (1r, 2s)-(-)-n-methylephedrine: amine
+  (1s)-(-)-beta-pinene: monoterpene
+  (1s)-2, 6, 6-trimethylbicyclo[3.1.1]hept-2-ene: monoterpene
+  (1s)-alpha-pinene: monoterpene
+  1, 1, 3, 3, 5, 5-hexamethyl-1, 5-diphenyl-trisiloxane: siloxane
+  1, 1, 3-trimethyl-1-silacyclobutane: organosilicon
+  1, 1-cyclopropanedicarbonitrile, 2, 2, 3-trimethyl: nitrile
+  1, 1-cyclopropanedicarbonitrile, 2, 2-dimethyl: nitrile
+  1, 1-dimethylamino-1-butene: amine
+  1, 11-undecandiol: alcohol
+  1, 13-tetradecadiene: alkene
+  1, 2, -trifluorobenzene: halogen
+  1, 2, 3, -trifluorobenzene: halogen
+  1, 2, 3, 4, 5, 8-hexahydronaphthalene: alkane
+  1, 2, 3-trifluorobenzene: halogen
+  1, 2, 3-trifluorobenzene1: halogen
+  1, 2, 4, 4-tetramethylcyclopentene: alkene
+  1, 2, 4-trifluorobenzene: halogen
+  1, 2-dimethyl cyclopropene: alkene
+  1, 2-dimethyl-4-trifluoroacetoxycyclohexane: halogen
+  1, 2-dipropylcyclopropene: alkene
+  1, 2-dithiolane-3-carboxylic acid: organic.acid
+  1, 2-pentadiene: alkene
+  1, 2-propanediol, 3-(dimethylamino): amine
+  1, 3, 2-oxathiaborinane, 2, 5-diisopropyl-6-methyl: organoboron
+  1, 3, 5, 7-cyclooctatetraene: alkene
+  1, 3, 5-cycloheptatriene: alkene
+  1, 3, 5-cycloheptatriene, 3, 7, 7-trimethyl: alkene
+  1, 3, 5-cyclononatriene, hexamethyl: alkene
+  1, 3, 5-heptatriene, (e, e): alkene
+  1, 3, 5-hexatriene, 2-methyl: alkene
+  1, 3, 5-hexatriene, 3-methyl: alkene
+  1, 3, 5-trifluorobenzene: halogen
+  1, 3, 6, 10-dodecatetraene, 3, 7, 11-trimethyl-, (z, e): alkene
+  1, 3, 6-heptatriene, 2, 5, 5-trimethyl: monoterpene
+  1, 3, 6-octatriene, 2, 7-dimethyl: monoterpene
+  1, 3, 6-octatriene, 3, 7-dimethyl: monoterpene
+  1, 3, 7-octatriene: alkene
+  1, 3, 7-octatriene, 3, 7-dimethyl: monoterpene
+  1, 3, 8-menthatriene: monoterpene
+  1, 3, 8-p-menthatriene: monoterpene
+  1, 3, 8p-menthatriene: monoterpene
+  1, 3-benzenedicarboxylic acid, [4-(methoxycarbonyl)phenyl]methyl methyl ester: organic.acid
+  1, 3-benzodioxole, 5-(1-propenyl): heteroaromatic
+  1, 3-bis(trimethylsilyl)benzene: organosilicon
+  1, 3-butadiene, 2, 3-dimethyl: alkene
+  1, 3-butadiene, 2-ethyl: alkene
+  1, 3-butadiene, 2-methyl: terpene
+  1, 3-cis, 5-cis-octatriene: alkene
+  1, 3-cyclobutadiene, 2-methyl: alkene
+  1, 3-cycloheptadiene: alkene
+  1, 3-cyclohexadiene, 1-methyl-4-(1-methylethyl): alkene
+  1, 3-cyclohexadiene, 2-methyl-5-(1-methylethyl)-, monoepoxide: epoxide
+  1, 3-cyclohexadiene, 5, 6-dimethyl: alkene
+  1, 3-cyclohexadiene-1-carboxaldehyde, 2, 6, 6-trimethyl: monoterpenoid
+  1, 3-cyclononadiene: alkene
+  1, 3-cyclooctadiene, 5-bromo: halogen
+  1, 3-cyclopentadiene, 5, 5-dimethyl: alkene
+  1, 3-cyclopentadiene, 5-(1-methylethylidene): alkene
+  1, 3-cyclopentadiene, trimethyl: alkene
+  1, 3-cyclopentanedione, 2, 2-dimethyl: ketone
+  1, 3-dimethyl cyclopropene: alkene
+  1, 3-dioxane-4, 6-dione, 5, 5-dimethyl-2-(1-methylethylidene): ketone
+  1, 3-hexadien-5-yne: alkyne
+  1, 3-hexadiene, 3-ethyl-2, 5-dimethyl: alkene
+  1, 3-pentadiene: alkene
+  1, 3-pentadiene, 2, 3-dimethyl: alkene
+  1, 3-pentadiene, 2-methyl: alkene
+  1, 3-pentadiene, 3-methyl: alkene
+  1, 4-benzenedicarbonitrile: nitrile
+  1, 4-benzenedicarbonitrile, 2, 3, 5, 6-tetrafluoro: halogen
+  1, 4-cyclohexadiene, 1-methyl-4(1-methylethyl): alkene
+  1, 4-cyclohexadiene, 1-methyl-4-(1-methylethyl): alkene
+  1, 4-cyclohexadiene, 1-methyl-4-methylethyl): alkene
+  1, 4-cyclohexadiene, 3-ethenyl-1, 2-dimethyl: alkene
+  1, 4-cyclohexadiene-1-methanol, 4-(1-methylethyl): alcohol
+  1, 4-cyclohexane, 1-methyl-4-(1-methylethyl): alkane
+  1, 4-cyclooctadiene, 6-bromo: halogen
+  1, 4-dichloro-1, 4-disilabutane: organosilicon
+  1, 4-hexadiene: alkene
+  1, 4-hexadiene, 4-methyl: alkene
+  ? 1, 4-methano-1h-indene, octahydro-4-methyl-8-methylene-7-(1-methylethyl)-, [1s-(1.alpha.,
+    3a.beta., 4.alpha., 7.alpha., 7a.beta.)]
+  : sesquiterpene
+  1, 4-methanoazulene, decahydro-4, 8, 8-trimethyl-9-methylene-, [1s-(1.alpha., 3a.beta., 4.alpha., 8a.beta.)]: sesquiterpene
+  1, 4-pentadien-3-ol: alcohol
+  1, 4-pentadiene: alkene
+  1, 5, 5-trimethyl-6-methylene-cyclohexene: monoterpene
+  1, 5-cyclooctadiene, 1, 3-dimethyl: alkene
+  1, 5-cyclooctadiene, 1, 5-dimethyl: alkene
+  1, 5-cyclooctadiene, 3, 8-dimethyl: alkene
+  1, 5-heptadien-4-ol, 3, 3, 6-trimethyl: monoterpenoid
+  1, 5-hexadien-3-yne: alkyne
+  1, 5-pentanediol, 3-methyl: alcohol
+  1, 6, 10-dodecatriene, 7, 11-dimethyl-3-methylene: alkene
+  1, 6-dimethylhepta-1, 3, 5-triene: alkene
+  1, 6-octadien-3-ol, 2, 7-dimethyl: monoterpenoid
+  1, 6-octadien-3-ol, 3, 7-dimethyl: monoterpenoid
+  1, 6-octadien-3-ol, 3, 7-dimethyl-, (+/-): monoterpenoid
+  1, 7, 7-trimethylbicyclo[2.2.1]hept-5-en-2-ol: monoterpenoid
+  1, 7, 7-trimethylbicyclo[2.2.1]hept-5-en-2-one: monoterpenoid
+  1, 7-octadien-3-one, 2-methyl-6-metylene: monoterpenoid
+  1, 7-octadien-3one, 2-methyl-6-methylene: monoterpenoid
+  1, 8-octanediol: alcohol
+  1-(2-pyrazinyl)butanon: ketone
+  1-amino-3-methyl-2-butene: amine
+  1-butanamine, n-(2-pyridinylmethylene): amine
+  1-butanol, 2-amino-3-methyl: alcohol
+  1-butanol, 2-ethyl: alcohol
+  1-butanol, 2-methyl: alcohol
+  1-butanol, 2-methyl-, acetate: organic.acid
+  1-butene: alkene
+  1-butene, 2-methyl: alkene
+  1-butene, 3-methyl: alkene
+  1-cyclohexene, 1, 3, 3-trimethyl-2-(1-methylbut-1-en-3-on-1-yl): ketone
+  1-cyclohexene-1-carboxylic acid: organic.acid
+  1-cyclohexene-1-methanol: alcohol
+  1-cyclopentene-1-methanol, 2-methyl-5-(1-methylethyl): alcohol
+  1-decanol, 2-hexyl: alcohol
+  1-decene, 9-methyl: alkene
+  1-dodecanamine: amine
+  1-dodecanamine, n, n-dimethyl: amine
+  1-eicosanol: alcohol
+  1-ethylcyclopropanol: alcohol
+  1-ethynylcyclopentanol: alcohol
+  1-heptanethiol: thiol
+  1-heptene: alkene
+  1-hexanol, 2-ethyl: alcohol
+  1-hexen-3-yne: alkyne
+  1-hexen-3-yne, 2, 5, 5-trimethyl: alkyne
+  1-hexene: alkene
+  1-hexene, 3, 4, 5-trimethyl: alkene
+  1-hexene, 3, 4-dimethyl: alkene
+  1-imidazol-1-yl 3-methylbut-2-en-1-one: ketone
+  1-methoxy-1, 4-cyclohexadiene: alkene
+  1-methoxy-3-(2-hydroxyethyl)nonane: alcohol
+  1-methoxymethoxy-hexa-2, 4-diene: alkene
+  1-methyl-6-methylenebicyclo[3.2.0]heptane: monoterpene
+  1-methylcyclopropanemethanol: alcohol
+  1-methylene-2-vinylcyclopentane: alkene
+  1-nonanol: alcohol
+  1-nonanol, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9-heptadecafluoro: halogen
+  1-nonen-3-ol: alcohol
+  1-nonene: alkene
+  1-octadecanamine: amine
+  1-octanesulfonyl chloride: halogen
+  1-octanol: alcohol
+  1-octanol, 2-butyl: alcohol
+  1-octene: alkene
+  1-octene, 2-methoxy: alkene
+  1-octene, 7-methyl: alkene
+  1-pentadecene: alkene
+  1-pentanol, 2, 2, 3, 3, 4, 4, 5, 5-octafluoro: alcohol
+  1-pentanol, 2-methyl: alcohol
+  1-pentanol, 5-(methylenecyclopropyl): alcohol
+  1-pentanol, 5-cyclopropylidene: alcohol
+  1-penten-3-ol: alcohol
+  1-penten-3-one: ketone
+  1-penten-3-yne, 2-methyl: alkyne
+  1-pentene: alkene
+  1-pentene, 2, 3-dimethyl: alkene
+  1-pentene, 5-bromo: halogen
+  1-pentene, 5-methoxy: alkene
+  1-propanonn, 1-(2-pyridinyl): ketone
+  1-propene: alkene
+  1-propene, 2-methyl: alkene
+  1-propenylaziridine: amine
+  1-tetradecane: alkane
+  1-tridecane: alkane
+  1-tridecyne: alkyne
+  1-undecene: alkene
+  10-methylnonadecane: alkane
+  10s, 11s-himachala-3(12), 4-diene: sesquiterpene
+  11, 15-dimethylpentatriacontane: alkane
+  13-methyl-tetradec-13-ene-1, 12-diol: alcohol
+  14-methyl-8-hexadecen-1-ol: alcohol
+  17-octadecen-14-yn-1-ol: alcohol
+  18-nonadecen-1-ol: alcohol
+  1h, 1h, 11h-eicosafluoro-1-undecanol: alcohol
+  1h, 1h, 9h-hexadecafluoro-1-nonanol: alcohol
+  1h-cyclopenta[1, 3]cyclopropa[1, 2]benzene, octahydro-7-methyl-3-methylene-4-(1-methylethyl)-, [3as-(3a.alpha., 3b.beta., 4.beta., 7.alpha., 7as)]: sesquiterpene
+  1h-cyclopenta[1, 3]cyclopropa[1, 2]benzene, octahydro-7-methyl-3-methylene-4-(1-methylethyl)-, [3as-(3a.alpha., 3b.beta., 4.beta., 7.alpha., 7as@)]: sesquiterpene
+  1h-cyclopropanaphthalene, decahydro-1, 1, 3a-trimethyl-7-methylene-, [1as-(1a.alpha., 3a.alpha., 7a.beta., 7b.alpha.)]: sesquiterpene
+  1h-cyclopropazulene, decahydro-1, 1, 7-trimethyl-4-methylene-, [1ar-(1a.alpha., 4a.beta., 7.alpha., 7a.beta., 7b.alpha.)]: sesquiterpene
+  1h-imidazol-2-amine: heteroaromatic
+  1h-inden-1-one, 2, 3, 4, 5, 6, 7-hexahydro: ketone
+  1h-indol-5-ol: heteroaromatic
+  1h-indole, 5-methyl-2-phenyl: heteroaromatic
+  1h-indole-2, 3-dione, 1-(tert-butyldimethylsilyl)-6-[(tert-butyldimethylsilyl)oxy]-, 3-(o-ethyloxime): heteroaromatic
+  1h-perfluorohexane: halogen
+  1h-pyrazole, 4-ethyl-3, 5-dimethyl: heteroaromatic
+  1h-pyrrole, 1-butyl: heteroaromatic
+  1h-pyrrole, 1-methyl: heteroaromatic
+  1r, 4r, 7r, 11r-1, 3, 4, 7-tetramethyltricyclo[5.3.1.0(4.11)]undec-2-ene: alkene
+  1s-alpha-pinene: monoterpene
+  2(1h)-naphthalenone, 4a, 5, 6, 7, 8, 8a-hexahydro-7.alpha.-isopropyl-4a.beta., 8a.beta.-dimethyl: ketone
+  2(3h)-furanone, 5-ethenyldihydro-5-methyl: ketone
+  2(3h)furanone, 5-ethenyldihydro-5-methyl: organic.acid
+  2(5h)-furanone, 5, 5-dimethyl: organic.acid
+  2(5h)-furanone, 5-(2-methyl-2-propenyl): ketone
+  2, 2, 5, 5-tetramethyl-cyclopentanol: alcohol
+  2, 2-dimethylperhydro-1, 3-oxazine: heteroaromatic
+  2, 3, 4-trimethoxyphenylacetonitrile: nitrile
+  2, 3-diazabicyclo[2.2.1]hept-2-ene: heteroaromatic
+  2, 3-dimethyl-4-penten-2-ol: alcohol
+  2, 3-dimethyl-cyclohexa-1, 3-diene: alkene
+  2, 3-nonadiene: alkene
+  2, 3-pentadiene, 2, 4-dimethyl: alkene
+  2, 4, 5-trimethylimidazole: heteroaromatic
+  2, 4, 6, 8-tetramethyl-1-undecane: alkane
+  2, 4, 6-cycloheptatrien-1-one, 3, 5-bis-trimethylsilyl: organosilicon
+  2, 4, 6-cycloheptatrien-1-one, 3-bromo-2-hydroxy: halogen
+  2, 4, 6-octatriene, all-e: alkene
+  2, 4, 6-trimethyl-1, 3, 6-heptatriene: monoterpene
+  2, 4-cycloheptadien-1-one, 2, 6, 6-trimethyl: ketone
+  2, 4-cyclopentadiene-1-ethanamine: amine
+  2, 4-dichlorophenylacetic acid: organic.acid
+  2, 4-dimethyl-1-heptaene: alkene
+  2, 4-dimethyl-1-heptane: alkane
+  2, 4-dimethyl-1-heptene: alkene
+  2, 4-heptadiene, 2, 6-dimethyl: alkene
+  2, 4-hexadienal, (e, e): aldehyde
+  2, 4-hexadiene: alkene
+  2, 4-hexadiene, (e, e): alkene
+  2, 4-hexadiene, 2-methyl: alkene
+  2, 4-hexadiyne: alkyne
+  2, 5-cyclohexadiene-1, 4-dione, 2, 6-bis(1, 1-dimethylethyl): ketone
+  2, 5-dimethylphenyl isothiocyanate: aromatic
+  2, 5-hexanediamine, 2, 5-dimethyl: amine
+  2, 5-methano-2h-furo[3, 2-b]pyran-8-one, hexahydro: heteroaromatic
+  2, 5-octadiene: alkene
+  2, 5-pyrrolidinedione, 3-ethylidene-4-methyl: ketone
+  2, 6, 10-dodecatrien-1-ol, 3, 7, 11-trimethyl: sesquiterpene
+  2, 6, 6-trimethyl-2-cyclohexene-1, 4-dione: ketone
+  2, 6-bis(1, 1-dimethylethyl)-4, 4-dimethylcyclohexa-2, 5-dien-1-one: ketone
+  2, 6-dimethyl-1, 3, 5, 7,-octatetraene, e: monoterpene
+  2, 6-dimethyl-1, 3, 5, 7-octatetraene, e: monoterpene
+  2, 6-dimethylphenyl isothiocyanate: aromatic
+  2, 6-octadien-1-ol, 2, 7-dimethyl: monoterpenoid
+  2, 6-octadien-1-ol, 3, 7-dimethyl-, formate: organic.acid
+  2, 6-octadiene: alkene
+  2-(5-aminohexyl)furan: amine
+  2-aminophenacetic acid: organic.acid
+  2-azafluorenone: heteroaromatic
+  2-bornene: monoterpene
+  2-butanoic acid, 3-methyl-, ethyl ester: organic.acid
+  2-butanol: alcohol
+  2-butanol, 1-(dimethylamino): amine
+  2-butanone, 3, 3-dimethyl: ketone
+  2-butanone, 4-hydroxy: ketone
+  2-butanone, oxime: oxime
+  2-buten-1-ol, 3-methyl: alcohol
+  2-butenal, 2-methyl: aldehyde
+  2-butenal, 3-methyl: aldehyde
+  2-butene: alkene
+  2-butene, 1, 1, 1, 4, 4, 4-hexafluoro: halogen
+  2-butene, 2-methyl: alkene
+  2-butenedinitrile: nitrile
+  2-butenoic acid, 3-methyl, ethyl ester: organic.acid
+  2-butenoic acid, 3-methyl-, ethyl ester: organic.acid
+  2-caren-4-ol: monoterpenoid
+  2-carene: monoterpene
+  2-cyclohexen-1-ol, 2-methyl-5-(1-methylethenyl): alcohol
+  2-cyclohexen-1-one: ketone
+  2-cyclohexen-1-one, 4-(1-methylethyl): ketone
+  2-cyclohexen-1-one, 4-ethyl-4-methyl: ketone
+  2-decen-1-ol: alcohol
+  2-dimethylbenzyl-6-t-butylphenol: aromatic
+  2-furanmethanamine: amine
+  2-heptanol, 4-methyl: alcohol
+  2-heptanone: ketone
+  2-heptyne: alkyne
+  2-hexanal: aldehyde
+  2-hexanone, 3, 4-dimethyl: ketone
+  2-hexenal: aldehyde
+  2-hexene, 5-methyl: alkene
+  2-hexyne, 4-methyl: alkyne
+  2-isopropyl-4-methyl-1, 3, 2-oxathiaborinane: organoboron
+  2-isopropylidene-3-methylhexa-3, 5-dienal: aldehyde
+  2-isopropylidenehydrazono-3-methyl-5-chloro-2, 3-dihydrobenzothiazole: heteroaromatic
+  2-isopropenyl-4a, 8-dimethyl-1, 2, 3, 4, 4a, 5, 6, 7-octahydronaphthalene: sesquiterpene
+  2-isopropenyl-4a, 8-dimethyl-1, 23, 4, 4a-5, 6, 8a-octahydronaphthalene: sesquiterpene
+  2-methyl-1-(n'-(2-methylpropyl)-n-phenylamidino)ureido n-methylcarbamate: carbamate
+  2-methylbicyclo[3.2.1]octane: alkane
+  2-nonen-1-ol: alcohol
+  2-nonen-4-one, 2-methyl: ketone
+  2-octen-4-ol: alcohol
+  2-pentanone, 4-amino-4-methyl: ketone
+  2-pentene: alkene
+  2-pentene, 2-methoxy: alkene
+  2-pentene, 4, 4-dimethyl: alkene
+  2-pentynal: aldehyde
+  2-propanone, o-methyloxime: oxime
+  2-propen-1-amine, n-ethyl: amine
+  2-propenal, 2-methyl: aldehyde
+  2-propenoic acid: organic.acid
+  2-propenoic acid, 1, 4-butanediyl ester: organic.acid
   2-thujene: monoterpene
+  2-tridecanol: alcohol
+  2h-2, 4a-methanonaphthalene, 1, 3, 4, 5, 6, 7-hexahydro-1, 1, 5, 5-tetramethyl-, (2s): sesquiterpene
+  2h-benzopyran, 3, 4, 4a, 5, 6, 8a-hexahydro-2, 5, 5, 8a-tetramethyl-, (2.alpha., 4a.alpha., 8.alpha.): heteroaromatic
+  2h-pyran, 3, 4-dihydro: heteroaromatic
+  2h-pyran, 3, 4-dihydro-4-hydroxy: heteroaromatic
+  2h-pyran, 5, 6-dihydro-2-methyl: heteroaromatic
+  2h-pyran, tetrahydro: heteroaromatic
+  2h-pyran, tetrahydro-2-(12-pentadecynyloxy): heteroaromatic
+  3, 3-dimethyl-6-methylenecyclohexene: monoterpene
+  3, 4, 4-trimethylcyclohexene: alkene
+  3, 4-dimethyl-2-pentanone: ketone
+  3, 4-nonadiene: alkene
+  3, 5, 6-trimethyl-triazolo[3, 4-c]triazine-1, 2, 4: heteroaromatic
+  3, 5-dihydroxycyclohexanamine: amine
+  3, 6-dimethyl-2, 3, 3a, 4, 5, 7a-hexahydrobenzofuran: heteroaromatic
+  3, 7-nonadien-2-ol, 4, 8-dimethyl: alcohol
+  3-allylcyclohexene: alkene
+  3-amino-4-methylbenzamide: amine
+  3-bromo-7-methyl-1-adamantanecarboxylic acid: halogen
+  3-butan-2-ol, 2-methyl: alcohol
+  3-buten-1-ol, 3-methyl: alcohol
+  3-buten-2-ol, 2-methyl: alcohol
+  3-buten-2-ol-, 2-methyl: alcohol
+  3-butenoic acid, 3-diethylaminocarbonyl-, methyl ester: organic.acid
+  3-butenoic acid, 3-methyl-, (3-methyl-3-butenyl) ester: organic.acid
+  3-caranol, (1r, 3r, 6r)-(+): monoterpenoid
   3-carene: monoterpene
+  3-cyclohexen-1-methanol, alpha, alpha, 4-trimethyl: alcohol
+  3-cyclohexen-1-ol, 4-methyl-1-(1-methylethyl): alcohol
+  3-cyclohexen-1-one 2-isopropyl-5-methyl: ketone
+  3-cyclohexene-1-methanol, alpha, alpha, 4-trimethyl-, propanoate: organic.acid
+  3-cyclopentene-1-acetaldehyde, 2, 2, 3-trimethyl: aldehyde
+  3-cyclopentene-1-acetaldehyde, 2, 3, 3-trimethyl: aldehyde
+  3-cyclopenteneethanal, 2-[[(tetrahydro-2-pyranyl)oxy]methyl]-, (1r, 2-cis): aldehyde
+  3-heptene: alkene
+  3-heptyne, 5-methyl: alkyne
+  3-heptyne, 7-chloro: halogen
+  3-hexen-1-ol: alcohol
+  3-hexen-1-ol, acetate: organic.acid
+  3-hexen-1-ol, formate: organic.acid
+  3-hexene, 1, 1, 2, 2, 5, 5, 6, 6-octafluoro: alkene
+  3-hexyne: alkyne
+  3-hexyne, 2, 2-dimethyl-1-dimethylamino: amine
+  3-menthene: monoterpene
+  3-oxo-5-phenylpentanoic acid, 2-chloroethyl ester: organic.acid
+  3-pentanone: ketone
+  3-penten-2-ol: alcohol
+  3-pyridinecarboxylic acid, 5-ethenyl, methyl ester: organic.acid
+  3-thujanone: monoterpenoid
+  3-thujen-2-one: monoterpenoid
   3-thujene: monoterpene
+  3h-purine, 2, 3-dimethyl-6-(methylthio): heteroaromatic
+  4, 4'-tetramethylenedioxybis(4'-butyl-onn-azoxybenzene): aromatic
+  4, 7, 10, 13, 16, 19-docosahexaenoic acid, methyl ester, (all-z): organic.acid
+  4, 7, 10, cycloundecatriene, 1, 1, 4, 8-tetramethyl-, cis, cis, cis: sesquiterpene
+  4, 7, 10-cycloundecatriene, 1, 1, 4, 8-tetramethyl-, cis, cis, cis: sesquiterpene
+  ? 4, 7-methanoazulene, 1, 2, 3, 4, 5, 6, 7, 8-octahydro-1, 4, 9, 9-tetramethyl-,
+    [1s-(1.alpha., 4.alpha., 7.alpha.)]
+  : sesquiterpene
+  4-(4-methoxycarbonylbutyl)-4-butanolide: organic.acid
+  4-carene: monoterpene
+  4-carene, (1s, 3r, 6r)-(-): monoterpene
+  4-chloroquinoline: halogen
+  4-cyclohexadiene, 1-methyl-4-(1-methylethyl): alkene
+  4-cyclopentene-1, 3-diol, trans: alcohol
+  4-cyclopentene-1, 3-dione, 4, 5-dimethyl-2-phenyl: ketone
+  4-hexen-1-ol: alcohol
+  4-hydroxyadamantan-2-one: ketone
+  4-hydroxybenzothiophene: heteroaromatic
+  4-methyl-1, 3-pentadiene: alkene
+  4-methyl-z-4-hexadecen-1-ol: alcohol
+  4-octanol, 2-methyl: alcohol
+  4-octyne: alkyne
+  4-pentanal, 2-methyl: aldehyde
+  4-pentanoic acid: organic.acid
+  4-pentenal, 2-methyl: aldehyde
+  4-pentenoic acid: organic.acid
+  4-thujanol: monoterpenoid
+  4h-1, 3-thiazine-6-carboxylic acid, 2-(methylamino)-4-oxo-, methyl ester: organic.acid
+  5, 5-dimethyl-cyclohex-3-en-1-ol: alcohol
+  5, 6-dihydro-2, 4, 6-trimethyl-4h-1, 3, 5-dithiazine: heteroaromatic
+  5, 8, 11, 14, 17-eicosapentaenoic acid, methyl ester, (all-z): organic.acid
+  5-aminoisophthalic acid: organic.acid
+  5-hepten-2-one, 6-methyl: ketone
+  5-hexen-2-one, 5-methyl-3-methylene: ketone
+  6, 10-dimethyl-3-(1-methylethylidene)-1-cyclodecane: alkene
+  6, 8-diacetoxy-2-methyl-non-2-enoic acid, methyl ester: organic.acid
+  6-hepten-2-ol, 4-methylene: alcohol
+  6-hydrobenzofuran-3-one: aromatic
+  6-methyl-1, 5-heptadiene: alkene
+  6-methyl-2-(3-nitrophenyl)imidazo[1, 2-a]pyridine: heteroaromatic
+  6-nonynoic acid: organic.acid
+  6-tridecane: alkane
+  7-methylenebicyclo[4.2.0]octane: alkene
+  7-propylidene-bicyclo[4.1.0]heptane: alkene
+  7h-dibenzocarbazole, 7-methyl: heteroaromatic
+  8-methylene-3-oxatricyclo[5.2.0.0(2, 4)]nonane: monoterpenoid
+  9-amino-1-methyl-3, 6-diazahomoadamantane: amine
+  a-fenchene: monoterpene
   a-pinene: monoterpene
   a-terpinene: monoterpene
+  acetic acid, 1, 3, 7-trimethylocta-2, 6-dienyl ester: organic.acid
+  acetic acid, 1, 7, 7-trimethyl-bicyclo[2.2.1]hept-2-yl ester: organic.acid
+  acetic acid, 1-methylcyclopentyl ester: organic.acid
+  acetic acid, 2-phenylethyl ester: organic.acid
+  acetic acid, butyl ester: organic.acid
+  acetic acid, hexyl ester: organic.acid
+  acetic acid, mercapto-, 2-methoxyethyl ester: organic.acid
+  acetic acid, phenylmethyl ester: organic.acid
+  acetone: ketone
+  acetophenone: ketone
   acid: organic.acid
   al: aldehyde
   alcohol: alcohol
   aldehyde: aldehyde
+  allyl methallyl ether: ether
+  alpha-bergamotene: sesquiterpene
+  alpha-caryophyllene: sesquiterpene
+  alpha-cedrene: sesquiterpene
+  alpha-cendrene: sesquiterpene
+  alpha-cubebene: sesquiterpene
+  alpha-cubene: sesquiterpene
+  alpha-elemene: sesquiterpene
+  alpha-farnesene: sesquiterpene
+  alpha-fenchene: monoterpene
+  alpha-gurjunene: sesquiterpene
+  alpha-longipinene: sesquiterpene
+  alpha-methylstyrene: aromatic
+  alpha-muurolene: sesquiterpene
+  alpha-phellandrene: monoterpene
   alpha-pinene: monoterpene
   alpha-terpinene: monoterpene
   alpha-terpineol: monoterpenoid
   amine: amine
+  aminomethanesulfonic acid: organic.acid
+  aminomethansulfonic acid: organic.acid
   ane: alkane
   anhydride: organic.acid
   aniline: amine
   arsenous: metalloid
+  arsenous acid, tris(trimethyl) ester: metalloid
+  arsenous acid, tris(trimethylsilyl) ester: metalloid
+  artemisia ketone: monoterpenoid
+  artemiseole: monoterpenoid
   azetidine: amine
+  azetidine, 1, 2-dimethyl: amine
+  azomycin: heteroaromatic
+  ? azulene, 1, 2, 3, 3a, 4, 5, 6, 7-octahydro-1, 4-dimethyl-7-(1-methylethenyl)-,
+    [1r-(1.alpha., 3a.beta., 4.alpha., 7.beta.)]
+  : alkene
+  ? azulene, 1, 2, 3, 5, 6, 7, 8, 8a-octahydro-1, 4-dimethyl-7-(1-methylethenyl)-,
+    [1s-(1.alpha., 7.alpha., 8a.beta.)]
+  : sesquiterpene
   b-phellandrene: monoterpene
   b-pinene: monoterpene
+  b-terpinene: monoterpene
+  bacchotricuneatin c: ketone
+  benzaldehyde: aldehyde
   benzamine: amine
+  benzamine, 3-methyl: amine
   benzenamine: amine
+  benzenamine, 2, 5-dihydromethyl: amine
   benzene: aromatic
+  benzene, (2-methoxyethyl): aromatic
+  benzene, (2-methyl-1-propenyl): aromatic
+  benzene, (bromoethyl)pentafluoro: halogen
+  benzene, (bromomethyl)pentafluoro: halogen
+  benzene, 1, 1'-(1, 1, 2, 2-tetramethyl-1, 2-ethandiyl)bis: aromatic
+  benzene, 1, 2, 3, 4-tetrafluoro: halogen
+  benzene, 1, 2, 3, 4-tetramethyl: aromatic
+  benzene, 1, 2, 3, 5-tetrafluoro: halogen
+  benzene, 1, 2, 3-trimethoxy-5-(2-propenyl): aromatic
+  benzene, 1, 2, 3-trimethyl: aromatic
+  benzene, 1, 2, 4, 5-tetrafluoro: halogen
+  benzene, 1, 2, 4, 5-tetramethyl: aromatic
+  benzene, 1, 2-difluoro-(trifluoromethyl): halogen
+  benzene, 1, 2-difluoro-4-(trifluoromethyl): halogen
+  benzene, 1, 2-difluoro-4-(trifluoromethyl_: halogen
+  benzene, 1, 2-dimethoxy-4-(1-propenyl): aromatic
+  benzene, 1, 2-dimethoxy-4-(2-propenyl): aromatic
+  benzene, 1, 2-dimethyl: aromatic
+  benzene, 1, 3-diethyl: aromatic
+  benzene, 1, 3-dimethyl: aromatic
+  benzene, 1, 4-difluoro: halogen
+  benzene, 1-(1, 1-dimethylethyl)-3-ethyl: aromatic
+  benzene, 1-(1, 5-dimethyl-4-hexenyl)-4-methyl: aromatic
+  benzene, 1-ethyl-2, 3-dimethyl: aromatic
+  benzene, 1-ethyl-2, 4-dimethyl: aromatic
+  benzene, 1-ethyl-3, 5-dimethyl: aromatic
+  benzene, 1-ethyl-4-(2-propyl): aromatic
+  benzene, 1-methoxy-4-(1-propenyl): aromatic
+  benzene, 1-methoxy-4-(2-propenyl): aromatic
+  benzene, 1-methyl-2-(1-methylethyl): monoterpenoid
+  benzene, 1-methyl-3-(1-methylethyl): monoterpenoid
+  benzene, 1-methyl-4-(1-methylethenyl): monoterpenoid
+  benzene, 1-methyl-4-(1-methylethyl): monoterpenoid
+  benzene, 2-acetate-1, 3-dimethoxy-5-(1-propenyl): aromatic
+  benzene, 2-ethyl-1, 4-dimethyl: aromatic
+  benzene, 4-ethyl-1, 2-dimethyl: aromatic
+  benzene, butly: aromatic
+  benzene, butyl: aromatic
+  benzene, ethenylpentafluoro: halogen
+  benzene, methyl(1-methylethenyl): monoterpenoid
+  benzene, pentafluoromethyl: halogen
+  benzene, tert-butyl: aromatic
+  benzenebutanal: aldehyde
+  benzeneethanamine, 2-methoxy-n, alpha-dimethyl: amine
+  benzeneethanamine, n, alpha-dimethyl-, hydrochloride: amine
+  benzenemethanamine: amine
+  benzenemethanol, 2-(dimethylamino): amine
+  benzenemethanol, 4-methoxy-, acetate: organic.acid
+  benzenemethanol, alpha-[1-(methylamino)ethyl]: amine
   benzofuran: aromatic
+  benzofuran, 2, 3-dihydro-2-menthyl: aromatic
+  benzofuran, 2, 3-dihydro-2-methyl: aromatic
+  benzofuran, 4, 7-dimethyl: aromatic
+  benzoic acid, 2, 3-dimethyl: organic.acid
+  benzoic acid, 2, 5-dimethyl: organic.acid
+  benzoic acid, 2-amino-3-hydroxy: organic.acid
+  benzoic acid, 2-hydroxy-, 2-methylpropyl ester: organic.acid
+  benzoic acid, 2-hydroxy-, 3-methylbutyl ester: organic.acid
+  benzoic acid, 2-hydroxy-, pentyl ester: organic.acid
+  benzoic acid, ethyl ester: organic.acid
+  benzoic acid, methyl ester: organic.acid
+  benzonitrile, 3, 4-dimethoxy: nitrile
+  benzonitrile, 4-hydroxy: nitrile
+  benzothiazole, 2, 6-dimethyl: heteroaromatic
+  benzothiazole, 2-(methylthio): heteroaromatic
+  benzyl alcohol: alcohol
+  beta-bisabolene: sesquiterpene
+  beta-cis-ocimene: monoterpene
+  beta-farnesene: sesquiterpene
+  beta-myrcene: monoterpene
+  beta-ocimene: monoterpene
   beta-phellandrene: monoterpene
   beta-pinene: monoterpene
+  beta-terpinene: monoterpene
+  beta-thujene: monoterpene
+  beta-trans-ocimene: monoterpene
+  bicyclo[2.1.1]heptane, 7, 7-dimethyl-2-methylene: monoterpene
+  bicyclo[2.2.1.]hept-2-ene, 1, 7, 7-trimethyl: monoterpene
+  bicyclo[2.2.1.]heptane, 7, 7-dimethyl-2-methylene: monoterpene
+  bicyclo[2.2.1]hept-2-ene 1, 7, 7-trimethyl: monoterpene
+  bicyclo[2.2.1]hept-2-ene, 1, 7, 7-trimethyl: monoterpene
+  bicyclo[2.2.1]hept-2-ene, 2, 7, 7-trimethyl: monoterpene
+  bicyclo[2.2.1]hept-2-ene, 2-methyl: monoterpene
+  bicyclo[2.2.1]hept-2-ene. 1, 7, 7-trimethyl: monoterpene
+  bicyclo[2.2.1]hept-2-one, 1, 3, 3-trimethyl: monoterpenoid
+  bicyclo[2.2.1]hepta-2, 5-diene, 1, 2, 3, 4, 7, 7-hexafluoro: halogen
+  bicyclo[2.2.1]heptan-2-one, 1, 3, 3-trimethyl: monoterpenoid
+  bicyclo[2.2.1]heptan-2-one, 1, 7, 7-trimethyl-, (1s): monoterpenoid
+  bicyclo[2.2.1]heptan-2-one, 6, 6-dimethyl-2-methylene: monoterpenoid
+  bicyclo[2.2.1]heptan-3-one, 6, 6-dimethyl-2-methylene: monoterpenoid
+  bicyclo[2.2.1]heptan-3-one. 6, 6-dimethyl-2-methylene: monoterpenoid
+  bicyclo[2.2.1]heptane, 2-methyl-3-methylene-2-(4-methyl-3-pentenyl)-, (1s-exo): monoterpene
+  bicyclo[2.2.1]heptane, 7, 7-dimethyl-2-methylene: monoterpene
+  bicyclo[2.2.1]heptane-2, 5-diol, 1, 7, 7-trimethyl-, (2-endo, 5-exo): alcohol
+  bicyclo[2.2.1]heptane-2-carboxylic acid, 3, 3-dimethyl-, methyl ester: organic.acid
+  bicyclo[2.2.1]heptane-3-one, 6, 6-dimethyl-2-methylene: monoterpenoid
+  bicyclo[2.2.2]oct-5-en-2-one: monoterpenoid
+  bicyclo[22.1]heptan-3-one, 6, 6-dimethyl-2-methylene: monoterpenoid
+  bicyclo[3.1.0]hex-2-en-2-one, 4-methyl-1-(1-methylethyl): ketone
+  bicyclo[3.1.0]hex-2-ene, 2-methyl-5-(1-methylethyl): monoterpene
+  bicyclo[3.1.0]hex-2-ene, 2-methyl-5-1(1-methylethyl): monoterpene
+  bicyclo[3.1.0]hex-2-ene, 4-methyl-1-(1-methylethyl): monoterpene
+  bicyclo[3.1.0]hex-2-ene, 4-methylene-1-(1-methylethyl): monoterpene
+  bicyclo[3.1.0]hex-3-en-2-ol, 2-methyl-5-(1-methylethyl)-, (1.alpha., 2.alpha., 5.alpha.): monoterpenoid
+  bicyclo[3.1.0]hex-3-en-2-ol, 2-methyl-5-(1-methylethyl)-, (1alpha, 2alpha, 5alpha): monoterpenoid
+  bicyclo[3.1.0]hex-3-en-2-one, 4-methyl-1-(1-methylethyl): monoterpenoid
+  bicyclo[3.1.0]hex-3-one, 4-methyl-1-(1-methylethyl)-, [1s-(1.alpha., 4.beta., 5.alpha.)]: monoterpenoid
+  bicyclo[3.1.0]hexan-2-ol, 2-methyl-5-(1-methylethyl)-, (1.alpha., 2.alpha., 5.alpha.): monoterpenoid
+  bicyclo[3.1.0]hexan-2-ol, 2-methyl-5-(1-methylethyl)-, (1.alpha., 2.beta., 5.alpha.): monoterpenoid
+  bicyclo[3.1.0]hexan-3-one, 4-methyl-1-(1-methylethyl)-, [1s-(1.alpha., 4.beta., 5.alpha.)]: monoterpenoid
+  bicyclo[3.1.0]hexane: alkane
+  bicyclo[3.1.0]hexane, 4-methylene-1-(1-methylethyl): monoterpene
+  bicyclo[3.1.0]hexane, 6-isopropylidene: monoterpene
+  bicyclo[3.1.0]hexane, 6-isopropylidene-1-methyl: monoterpene
+  bicyclo[3.1.0]hexane, 6-methylene: monoterpene
+  bicyclo[3.1.1]hept-2-ene, 2, 6, 6-trimethyl-, (+/-): monoterpene
+  bicyclo[3.1.1]hept-2-ene, 2, 6, 6-trimethyl-. (+/-): monoterpene
+  bicyclo[3.1.1]hept-2-ene, 2, 6-dimethyl-6-(4-methyl-3-pentenyl): sesquiterpene
+  bicyclo[3.1.1]hept-2-ene, 3, 6, 6-trimethyl: monoterpene
+  bicyclo[3.1.1]hept-2-ene-2-carboxaldehyde: monoterpenoid
+  bicyclo[3.1.1]hept-2-ene-2-carboxaldehyde, 6, 6-dimethyl: monoterpenoid
+  bicyclo[3.1.1]hept-2-ene-2-methanol, 6, 6-dimethyl: monoterpenoid
+  bicyclo[3.1.1]hept-2-ene-carboxaldehyde, 6, 6-dimethyl: monoterpenoid
+  bicyclo[3.1.1]hept-2-ene-methanol, 6, 6-dimethyl: alcohol
+  bicyclo[3.1.1]heptan-3-one, 2, 6, 6-trimethyl: monoterpenoid
+  bicyclo[3.1.1]heptan-3-one, 2, 6, 6-trimethyl-, (1.alpha., 2.beta., 5.alpha.): monoterpenoid
+  bicyclo[3.1.1]heptane, 6, 6-dimethyl: monoterpene
+  bicyclo[3.1.1]heptane, 6, 6-dimethyl-2-methylene, (1s): monoterpene
+  bicyclo[3.1.1]heptane, 6, 6-dimethyl-2-methylene-, (1s): monoterpene
+  bicyclo[3.2.0]hept-6-ene: alkene
+  bicyclo[3.2.0]heptane, 6-methylene: alkene
+  bicyclo[3.2.1]oct-2-ene, 3-methyl-4-methylene: monoterpene
+  bicyclo[3.3.0]oct-2-en-8-one, 3-methyl: ketone
+  bicyclo[4.1.0]hept-2-ene: monoterpene
+  bicyclo[4.1.0]hept-2-ene, 3, 7, 7-trimethyl: monoterpene
+  bicyclo[4.1.0]hept-4-en-3-ol, 3, 7, 7-trimethyl-, [1s-(1.alpha., 3.alpha., 6.alpha.)]: monoterpenoid
+  bicyclo[4.2.0]oct-1-ene, 7-endo-ethenyl: alkene
+  bicyclo[4.2.0]oct-1-ene, 7-exo-ethenyl: monoterpene
+  bicyclo[4.2.0]oct-1-ene. 7-exo-ethenyl: alkene
+  bicyclo[4.2.0]oct-3-en-2-one, 6-methyl-, (1r, 6r): monoterpenoid
+  bicyclo[4.2.0]octa-1, 3, 5-triene: alkene
+  bicyclo[4.4.0]dec-1-ene, 2-isopropyl-5-methyl-9-methylene: sesquiterpene
+  bicyclo[4.4.0]hex-1-ene, 2-isopropyl-5-methyl-9-methylene: alkene
+  bicyclo[5.1.0]octane, 8-methylene: alkene
+  bicyclo[5.2.0]nonane, 2-methylene-4, 8, 8-trimethyl-4-vinyl: alkene
+  bicyclo[7.2.0]undec-4-ene, 4, 11, 11-trimethyl-8-methylene: sesquiterpene
+  bicyclo[7.2.0]undec-4-ene, 4, 11, 11-trimethyl-8-methylene-, [1r-(1r, 4z, 9s)]: sesquiterpene
+  bicyclopentyl-1, 1'-diene: alkene
   borneol: monoterpenoid
   bornyl acetate: monoterpenoid
+  bornylene: monoterpene
+  borolo[1, 2-a]borine, octahydro: organoboron
+  boron, (n, n-dimethylmethanamine)trihydro-, (t-4): amine
   bromo: halogen
+  butane, 1-ethoxy: ether
+  butane, 2, 2-dimethyl: alkane
+  butanenitrile, 2-methyl: nitrile
+  butanoic acid, 2-ethylhexyl ester: organic.acid
+  butanoic acid, 2-hexenyl ester: organic.acid
+  butanoic acid, 2-methyl, hexyl ester: organic.acid
+  butanoic acid, 2-methyl-, ethyl ester: organic.acid
+  butanoic acid, 2-methyl-, ethyl ester, (+/-): organic.acid
+  butanoic acid, 2-methyl-, methyl ester: organic.acid
+  butanoic acid, 3-hexenyl ester: organic.acid
+  butanoic acid, butyl ester: organic.acid
+  butanoic acid, methyl ester: organic.acid
+  butanoic acid, octyl ester: organic.acid
+  butenol, methyl: alcohol
+  butyl acetate: organic.acid
+  butyl aldoxime, 2-methyl-, syn: oxime
+  calamenene: sesquiterpene
   camphene: monoterpene
+  camphenone, 6: monoterpenoid
   camphor: monoterpenoid
+  carbamic acid, methyl-, phenyl ester: organic.acid
+  carbonic acid, dimethyl ester: organic.acid
+  carboxamine: amide
+  caren-4-ol: monoterpenoid
   carene: monoterpene
   caryophyllene: sesquiterpene
+  caryophyllene oxide: sesquiterpene
+  caryophyllene-(i1): sesquiterpene
+  caryphyllene: sesquiterpene
+  carzenide: carbamate
   chloride: halogen
   chloro: halogen
+  chloromethylphosphonic dichloride: halogen
   cineole: monoterpenoid
+  cis, cis-2, 7-nonadiene: alkene
+  cis-1, 4-dimethyl-2-methylenecyclohexane: alkene
+  cis-2, 6-dimethyl-2, 6-octadiene: monoterpene
+  cis-3-hexenyl isovalerate: organic.acid
+  cis-3-hexenyl-alpha-methylbutyrate: organic.acid
+  cis-3-methylpen-3-ene-5-ol: alcohol
+  cis-3-methylpent-3-ene-5-ol: alcohol
+  cis-5-methyl-2-hexene: alkene
+  cis-8-methyl-bicyclo(4, 3, 0)non-3, 7-diene: alkene
+  cis-bicyclo[4.2.0]oct-3-en-7-one: ketone
+  ? cis-(-)-2, 4a, 5, 6, 9a-hexahydro-3, 5, 5, 9-tetramethyl(1h)-benzocycloheptene
+  : sesquiterpene
   copaene: sesquiterpene
+  ? cyclobuta[1, 2:3, 4]dicyclopentene, decahydro-3a-methyl-6-methylene-1-(1-methylethyl)-,
+    [1s-(1.alpha., 3a.alpha., 3b.beta., 6a.beta., 6b.alpha.)]
+  : sesquiterpene
+  cyclobutane, 1, 1'-(1, 1, 2, 2-tetrafluoro-1, 2-ethanediyl)bis[2-chloro-2, 3, 3-trifluoro: halogen
+  cyclobutane, 1, 2-dicyclopropyl: alkane
+  cyclobutanemethanol: alcohol
+  cyclofenchene: monoterpene
+  cycloheptane: alkane
+  cycloheptane, 1, 3, 5-tris(methylene): alkene
+  cycloheptanol: alcohol
+  cyclohexane, 1, 2-propadienyl: alkene
+  cyclohexane, 1, 3-dimethyl-2-methylene-, cis: alkene
+  cyclohexane, 1, 3-dimethyl-2-methylene-, trans: alkene
+  cyclohexane, 1-ethenyl-1-methyl-2, 4-bis(1-methylethenyl): alkene
+  cyclohexane, 1-ethenyl-1-methyl-2, 4-bis(1-methylethenyl)-, [1s-(1.alpha., 2.beta., 4.beta.)]: alkene
+  cyclohexane, 1-ethenyl-1-methyl-2-(1-methylethenyl)-4-(1-methylethylidene): alkene
+  cyclohexane, 1-methyl-4-(1-methylethylidene): alkene
+  cyclohexane, 1-methylene-4-(1-methylethenyl): alkene
+  cyclohexane, 2-ethenyl-1, 1,-dimethyl-3-methylene: alkene
+  cyclohexane, 3, 3, 5-trimethyl: alkane
+  cyclohexane, methyl: alkane
+  cyclohexanecarboxaldehyde: aldehyde
+  cyclohexanemethanol, 4-methylene: alcohol
+  cyclohexanol, 2-methyl-5-(1-methylethenyl)-, (1.alpha., 2.beta., 5.alpha.): alcohol
+  cyclohexanol, 3, 3, 5-trimethyl: alcohol
+  cyclohexanone, 5-methyl-2-(1-methylethyl)-, (2r-cis): ketone
+  cyclohexanone, 5-methyl-2-(1-methylethyl)-, cis: ketone
+  cyclohexasiloxane, dodecamethyl: siloxane
+  cyclohexene: alkene
+  cyclohexene, 1, 6, 6-trimethyl: alkene
+  cyclohexene, 1-methyl: alkene
+  cyclohexene, 1-methyl-(4-(1-methylethylidene): alkene
+  cyclohexene, 1-methyl-4-(1-methylethenyl): alkene
+  cyclohexene, 1-methyl-4-(1-methylethylidene): alkene
+  cyclohexene, 1-methyl-4-(5-methyl-1-methylene-4-hexenyl): alkene
+  cyclohexene, 2-ethenyl-1, 3, 3-trimethyl: alkene
+  cyclohexene, 3, 3, 5-trimethyl: alkene
+  cyclohexene, 3, 5, 5-trimethyl: monoterpene
+  cyclohexene, 4-ethenyl-1, 4-dimethyl: alkene
+  cyclohexene, 4-ethenyl-4-methyl-3-(1-methylethenyl)-1-(1-methylethyl)-, (3r-trans): alkene
+  cyclohexene, 4-methyl-3-(1-methylethylidene): alkene
+  cyclohexene, 4-methylene-1-(1-methylethyl): monoterpene
+  cyclohexene, 5-methyl-3-(1-methylethenyl)-, trans-(-): alkene
+  cyclonol: monoterpenoid
+  cyclonona-1, 2, 6-triene: alkene
+  cycloocta-1, 4-dien-3-one: ketone
+  cyclopentane, 1, 2, 3-trimethyl: alkane
+  cyclopentane, 1, 2-dimethyl-, trans: alkane
+  cyclopentane, 1, 3-dimethyl: alkane
+  cyclopentane, butyl: alkane
+  cyclopentane, methyl: alkane
+  cyclopentaneethanamine, n, alpha-dimethyl: amine
+  cyclopentanepropanoic acid, 2-oxo-, methyl ester: organic.acid
   cyclopentasiloxane: siloxane
+  cyclopentasiloxane, decamethyl: siloxane
+  cyclopentene, 1-pentyl: alkene
+  cyclopentene, 3-ethylidene-1-methyl: alkene
+  cyclopentene, 3-methyl: alkene
+  cyclopentyl acetylene: alkyne
+  cyclopropane, (1, 1-dimethylethoxy)(1-methylethylidene): ether
+  cyclopropane, (1-methylethylidene): alkene
+  cyclopropane, 1, 1-dimethyl-2-(2-methyl-2-propenyl): alkene
+  cyclopropane, 1, 1-dimethyl-2-(3-methyl-1, 3-butadienyl): alkene
+  cyclopropane, 1, 2-dimethyl-, cis: alkane
+  cyclopropane, 1, 2-dimethyl-, trans: alkane
+  cyclopropane, ethylidene: alkene
+  cyclopropane, propyl: alkane
+  cyclopropane, trimethylmethylene: alkene
+  cyclopropanecarboxaldehyde, 2-methyl-2-(4-methyl-3-pentenyl)-, trans-, (+-): aldehyde
+  cyclopropanecarboxylic acid, 1-amino: amine
+  cyclopropanemethanol, 2-isopropylidene-alpha-methyl: alcohol
+  cyclopropanenonanoic acid, 2-[(2-butylcyclopropyl)methyl]-, methyl ester: organic.acid
   cyclotetrasiloxane: siloxane
+  cyclotetrasiloxane, octamethyl: siloxane
   cyclotrisiloxane: siloxane
+  cyclotrisiloxane, hexamethyl: siloxane
   cymene: monoterpenoid
+  d-glucosamine, diethylmercaptal: sugar
+  d-limonene: monoterpene
+  d-verbenone: monoterpenoid
+  decamethylcyclopentasiloxane: siloxane
+  decanal: aldehyde
   decane: alkane
+  decane, 2, 2, 6-trimethyl: alkane
+  decane, 2, 4, 6-trimethyl: alkane
+  decane, 2, 5, 6-trimethyl: alkane
+  decane, 2, 6, 7-trimethyl: alkane
+  decane, 4-methyl: alkane
+  decane, 5-ethyl-5-methyl: alkane
+  delta-selinene: sesquiterpene
+  dezaguanine: heteroaromatic
+  dewar benzene, hexamethyl: alkene
+  di-epi-, alpha-cedrene-(l): sesquiterpene
+  di-epi-alpha-cedrene: sesquiterpene
+  di-epi-alpha-cedrene-(l): sesquiterpene
   diene: alkene
+  diethyltoluamide: amide
+  dimepheptanol: alcohol
+  dimethyl(1-methylvinyl)chlorosilane: organosilicon
   disila: organosilicon
   diyne: alkyne
+  dodecane, 2, 6, 10-trimethyl: alkane
   ene: alkene
+  epizonarene: sesquiterpene
   epoxide: epoxide
+  eremophilene: sesquiterpene
   ester: organic.acid
+  ethane, 1, 1, 1, 2-tetrachloro: halogen
+  ethane, 1, 1, 2-trichloro-1, 2, 2-trifluoro: halogen
+  ethanol, 2-[(2-ethylhexyl)oxy]: alcohol
+  ethanone, 1-(2-methyl-2-cyclopenten-1-yl): ketone
+  ethanone, 1-[3-methyl-3-(4-methyl-3-pentenyl)oxiranyl]: ketone
+  ethanone, 2-(dimethylamino)-1-phenyl: amine
+  ethene, methoxy: alkene
+  ether, 1-butylvinyl methyl: ether
+  ethyl acetoacetate ethylene acetal: organic.acid
+  ethyl chloride: halogen
+  ethyl p-acetamidobenzoate: organic.acid
+  ethyl tiglate: organic.acid
+  ethyl undecyl ether: ether
   ethylbenzene: aromatic
+  ethylidenecyclobutane: alkene
   eucalyptol: monoterpenoid
   eudesma: sesquiterpene
+  eudesma-4(14), 11-diene: sesquiterpene
+  eudesma-4-(14), 11-diene: sesquiterpene
+  fenchene: monoterpene
   fenchone: monoterpenoid
   fluoro: halogen
+  furan, 2, 3-dihydro-5-methyl: heteroaromatic
+  furan, 2-ethyl: heteroaromatic
+  furan, 2-methyl: heteroaromatic
+  furan, tetrahydro-3-methyl-4-methylene: heteroaromatic
   g-terpinene: monoterpene
+  gamma-cadinene: sesquiterpene
+  gamma-elemene: sesquiterpene
+  gamma-muurolene: sesquiterpene
   gamma-terpinene: monoterpene
   germacrene: sesquiterpene
+  germacrene d: sesquiterpene
+  glucose: sugar
+  heneicosane: alkane
+  heneicosane, 11-(1-ethylpropyl): alkane
+  hentriacontane: alkane
+  heptadecane: alkane
+  heptadecane, 4-methyl: alkane
+  heptadecane, 8-methyl: alkane
+  heptadecane, 9-octyl: alkane
   heptadiene: alkene
   heptane: alkane
+  heptane, 1-(1-butenyloxy): ether
+  heptane, 2, 4-dimethyl: alkane
+  heptane, 2-methyl: alkane
+  heptane, 3-methylene: alkene
   heptene: alkene
+  hexadecane, 7, 9-dimethyl: alkane
   hexadiene: alkene
+  hexamethylcyclotrisiloxane: siloxane
+  hexanal: aldehyde
+  hexane: alkane
+  hexane, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6-tridecafluoro: halogen
+  hexane, 2, 3, 4-trimethyl: alkane
+  hexane, 2-methyl-4-methylene: alkene
+  hexane, 3-ethyl: alkane
+  hexane, tetradecafluoro: halogen
+  hexanedioic acid, bis(1-methylethyl) ester: organic.acid
+  hexatriacontane: alkane
   hexyne: alkyne
+  homomenthyl salicylate: organic.acid
+  homosalate: organic.acid
   hydrazide: hydrazide
+  hydroxy-3-methoxyphenylacetonitrile: nitrile
   imidazo: heteroaromatic
   imidazole: heteroaromatic
+  imidazole, 2-trifluoromethyl-5-methyl: heteroaromatic
+  imidazole, 4-methyl-5-trifluoromethyl: heteroaromatic
+  imidazole, 5-methyl-4-trifluoromethyl: heteroaromatic
   imine: imine
   indole: heteroaromatic
   iodo: halogen
+  isoborneol: monoterpenoid
   isobornyl acetate: monoterpenoid
+  isoledene: sesquiterpene
+  isolongifolene, 9, 10-dehydro: sesquiterpene
+  isopinocamphone: monoterpenoid
   isoprene: terpene
   isopropenyltoluene: monoterpenoid
+  isopropylcyclobutane: alkane
+  isopropyltoluene: aromatic
+  isopulegol: monoterpenoid
   ketone: ketone
+  ketone, 1, 3-cycloheptadien-1-ylmethyl: ketone
+  l-verbenone: monoterpenoid
   limonene: monoterpene
+  linalool: monoterpenoid
   longifolene: sesquiterpene
+  m-cymene: monoterpenoid
+  m-xylene: aromatic
   menthatriene: monoterpene
+  menthol: monoterpenoid
+  methane, trifluoro: halogen
+  methyl 4-amino-3-methoxybenzoate: organic.acid
+  methyl salicylate: organic.acid
+  methyl(2-heptyl)amine: amine
+  myrtenal: monoterpenoid
+  n, n-dimethyl-2-methoxyethylamine: amine
+  n-cyclohexyl-hydroxylamine: amine
+  n-dodecylthioglycolate: thiol
+  n-hexyl salicylate: organic.acid
+  n-valeric acid cis-3-hexenyl ester: organic.acid
+  ? naphthalene, 1, 2, 3, 4, 4a, 5, 6, 8a-octahydro-4a, 8-dimethyl-2-(1-methylethenyl)-,
+    [2r-(2.alpha., 4a.alpha., 8a.beta.)]
+  : sesquiterpene
+  ? naphthalene, 1, 2, 3, 4, 4a, 5, 6, 8a-octahydro-7-methyl-4-methylene-1-(1-methylethyl)-,
+    (1.alpha., 4a.alpha., 8a.alpha.)
+  : sesquiterpene
+  ? naphthalene, 1, 2, 3, 4, 4a, 5, 6, 8a-octahydro-7-methyl-4-methylene-1-(1-methylethyl)-,
+    (1.alpha., 4a.beta., 8a.alpha.)
+  : sesquiterpene
+  ? naphthalene, 1, 2, 4a, 5, 6, 8a-hexahydro-4, 7-dimethyl-1-(1-methylethyl)-,
+    (1.alpha., 4a.alpha., 8a.alpha.)
+  : sesquiterpene
+  ? naphthalene, 1, 2, 4a, 5, 6, 8a-hexahydro-4, 7-dimethyl-1-(1-methylethyl)-,
+    (1.alpha., 4a.beta., 8a.alpha.)
+  : sesquiterpene
+  naphthalene, 1, 6-dimethyl-4-(1-methylethyl): aromatic
+  naphthalene, decahydro-4a-methyl-1-methylene-7-(1-methylethenyl)-, [4ar-(4a.alpha., 7.alpha., 8a.beta.)]: sesquiterpene
+  neoisothujyl alcohol: monoterpenoid
   nitrile: nitrile
   nonadecane: alkane
+  nonadecane, 2, 3-dimethyl: alkane
+  nonadecane, 9-methyl: alkane
+  nonanal: aldehyde
+  nonane: alkane
+  nonane, 2, 2, 4, 4, 6, 8, 8-heptamethyl: alkane
+  o-cymene: monoterpenoid
+  o-cymol: monoterpenoid
+  o-isopropenyltoluene: aromatic
+  o-isopropyltoluene: aromatic
+  o-xylene: aromatic
   ocimene: monoterpene
+  octadecane: alkane
+  octadecane, 1-[2-(hexadecyloxy)ethoxy]: ether
+  octadecane, 2-methyl: alkane
+  octamethylcyclotetrasiloxane: siloxane
   octane: alkane
+  octane, 2, 3, 3-trimethyl: alkane
+  octane, 2, 5, 6-trimethyl: alkane
+  octane, 3, 5-dimethyl: alkane
+  octane, 4-chloro: halogen
   octene: alkene
   ol: alcohol
   one: ketone
+  oxepane, 2, 2, 3-trimethyl: ether
   oxide: oxide
   oxime: oxime
+  oxime, methoxy-phenyl: oxime
+  oxime-, methoxy-phenyl: oxime
+  oxime-methoxy-phenyl: oxime
   oxirane: epoxide
+  oxirane, 2-ethyl-2-methyl: epoxide
+  oxirane, dodecyl: epoxide
   p-cymene: monoterpenoid
+  p-xylene: aromatic
+  pentadecane: alkane
   pentadiene: alkene
+  pentalene, octahydro, cis: alkane
+  pentalene, octahydro-, cis: alkane
+  pentanal, 2-methyl: aldehyde
+  pentane: alkane
+  pentane, 1, 1, 2, 2, 3, 3, 4, 4-octafluoro: halogen
+  pentane, 1, 5-dibromo: halogen
+  pentane, 1-(1-butenyloxy): ether
+  pentanoic acid, 2, 4-dimethyl-, t-butyl ester: organic.acid
+  pentanoic acid, 4-hexen-1-yl ester: organic.acid
+  perillene: monoterpene
   phellandrene: monoterpene
   phenazasiline: organosilicon
+  phenol: aromatic
   pinene: monoterpene
   pinocamphone: monoterpenoid
+  propanal: aldehyde
+  propanedinitrile, 3-(dimethylamino): nitrile
+  propanenitrile, 2-methyl: nitrile
+  propanenitrle, 2-methyl: nitrile
+  propanoic acid, 2-methyl-, ethyl ester: organic.acid
+  propanoic acid, 2-methyl-, propyl ester: organic.acid
+  propylene oxide: epoxide
+  propylhexedrine: amine
   pyradine: heteroaromatic
   pyran: heteroaromatic
+  pyrazine, 2-methoxy-3-(1-methylpropyl): heteroaromatic
   pyridine: heteroaromatic
+  pyridine, 5-ethenyl-2-methyl: heteroaromatic
+  pyrido[2, 3-d]pyrimidine-2, 4(1h, 3h)-dione: heteroaromatic
+  pyrido[3, 4-d]pyrimidine-2, 4(1h, 3h)-dione: heteroaromatic
   quinoline: heteroaromatic
   sabinene: monoterpene
   sabinene hydrate: monoterpenoid
+  sabinyl acetate: monoterpenoid
+  salicylic acid: organic.acid
   santolina triene: monoterpene
+  sec-butylcarbamothioic acid, o-ethyl ester: carbamate
   sila: organosilicon
   silane: organosilicon
   siloxane: siloxane
   silyl: organosilicon
+  spiro[2, 4]hepta-4, 6-diene: alkene
   styrene: aromatic
   sulfur dioxide: inorganic
+  sylvestrene: monoterpene
   terpinene: monoterpene
   terpineol: monoterpenoid
+  terpinolene: monoterpene
+  tetracontane, 3, 5, 24-trimethyl: alkane
+  tetracyclo[3.3.1(1, 8).0(2, 4)]decane: alkane
+  tetracyclo[3.3.1.1(1, 8).0(2, 4)]decane: alkane
+  tetradecane: alkane
+  tetradecane, 4-methyl: alkane
+  tetradecane, 5-methyl: alkane
+  tetradecyltrimethylammonium bromide: quaternary.ammonium
+  tetrafluoroisophthalonitrile: halogen
+  tetrahydrocyclopenta[1, 3]dioxin-4-one: ketone
+  tetratriacontane: alkane
   thiocarbazide: hydrazide
   thiol: thiol
+  thiophene: heteroaromatic
+  thiophene, 3-methyl: heteroaromatic
+  thujen-2-one: monoterpenoid
   thujene: monoterpene
+  thujenone: monoterpenoid
   thujone: monoterpenoid
   tiglate: organic.acid
   toluene: aromatic
-  tricyclene: monoterpene
-  triene: alkene
-  trifluorobenzene: halogen
-  triyne: alkyne
-  undecane: alkane
-  unknown: unknown
-  xylene: aromatic
-  yne: alkyne
-  α-pinene: monoterpene
-  α-terpinene: monoterpene
-  β-phellandrene: monoterpene
-  β-pinene: monoterpene
-  γ-terpinene: monoterpene
-  terpinolene: monoterpene
-  fenchene: monoterpene
-  a-fenchene: monoterpene         # α-fenchene normalized by your rules
-  α-fenchene: monoterpene
-  b-terpinene: monoterpene
-  β-terpinene: monoterpene
-  thujenone: monoterpenoid
-  thujen-2-one: monoterpenoid
-  3-thujen-2-one: monoterpenoid
-  caren-4-ol: monoterpenoid
-  2-caren-4-ol: monoterpenoid
-  tetradecane: alkane             # explicit, avoids relying on 'ane' catch-all
+  trans-2, 3, 5-trimethoxy-b-methyl-b-nitrostyrene: aromatic
+  trichlorofluoromethane: halogen
+  trichloromonofluoroethane: halogen
   trichloromonofluoromethane: halogen
-  o-cymene: monoterpenoid
-  m-cymene: monoterpenoid
-  o-xylene: aromatic
-  m-xylene: aromatic
-  p-xylene: aromatic
-  decamethylcyclopentasiloxane: siloxane
-  hexamethylcyclotrisiloxane: siloxane
-  octamethylcyclotetrasiloxane: siloxane
-  1,2,3-trifluorobenzene: halogen
-  butyl acetate: organic.acid
-  acetic acid, butyl ester: organic.acid
-
-normalization:
-- lowercase
-- trim
-- collapse_whitespace
-- unify_hyphen_comma
-- strip_trailing_punct
-- fold_greek
+  tricyclene: monoterpene
+  tricyclo[2.2.1.0(2, 6)]heptane, 1, 3, 3-trimethyl: monoterpene
+  tricyclo[2.2.1.0(2, 6)]heptane, 1, 7, 7-trimethyl: monoterpene
+  tricyclo[2.2.1.02, 6]heptane, 1, 3, 3-trimethyl: monoterpene
+  tricyclo[3.3.1.1(3, 7)]decane-2, 6-diol: alcohol
+  tricyclo[4.4.0.0(2, 8)]dec-4-ene: alkene
+  tricyclo[5.2.1.0(1, 5)]dec-2-ene: alkene
+  tridecane: alkane
+  tridecane, 2-methyl: alkane
+  tridecane, 4, 8-dimethyl: alkane
+  tridecane, 6-methyl: alkane
+  triene: alkene
+  trifluoroacetyl-isopulegol: monoterpenoid
+  trifluorobenzene: halogen
+  trimethylene oxide: epoxide
+  triyne: alkyne
+  umbellulol: sesquiterpene
+  undecanal, 2-methyl: aldehyde
+  undecane: alkane
+  undecane, 2, 5-dimethyl: alkane
+  undecane, 4, 6-dimethyl: alkane
+  undecane, 4, 7-dimethyl: alkane
+  undecane, 5, 7-dimethyl: alkane
+  unknown: unknown
+  urea, (1, 1-dimethylethyl): amide
+  xylene: aromatic
+  ylangene: sesquiterpene
+  yne: alkyne
 version: '1'
