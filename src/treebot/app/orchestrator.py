@@ -26,10 +26,11 @@ class Orchestrator:
         self,
         input_path: Path,
         classes_path: Path,
+        mapping_path: Path | None,
         out_dir: Path,
     ) -> int:
         """
-        Simple pipeline: normalize headers â†’ transform oldâ†’new â†’ write standardized.xlsx
+        Simple pipeline: normalize headers ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ transform oldÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢new ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ write standardized.xlsx
         """
         run_ctx = start_run(out_dir)
         val: ValidateService = self.container.validate
@@ -48,30 +49,53 @@ class Orchestrator:
 
             # 2. Load class map
             class_map = val.load_class_map(classes_path)
+            # 2b. Load species map (optional)
+            species_map: dict[tuple[str, str], str] | None = None
+            if mapping_path is not None:
+                try:
+                    species_map, _amb = val.load_species_map(mapping_path)
+                except Exception as e:
+                    self.logger.warning(
+                        f"Failed to load species map: {e}", extra={"path": str(mapping_path)}
+                    )
 
-            # 3. Load name canonicalization map (optional)
-            name_canon_map = None
-            canon_path = Path("configs/name_canonicalization.yaml")
-            if canon_path.exists():
-                from ..services.validation.name_canon import load_name_canon
-
-                name_canon_map = load_name_canon(canon_path)
-                self.logger.info(f"Loaded {len(name_canon_map)} name canonicalization rules")
-
-            # 4. Process sheets: normalize headers + transform old→new
+            # 3. Process sheets: normalize headers + transform oldÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢new
             all_processed: dict[str, pd.DataFrame] = {}
 
             for sheet in sheets:
                 self.logger.info(f"Processing sheet: {sheet.name} (schema={sheet.schema})")
 
                 # Normalize headers
-                df = process_sheet(val, sheet, self.logger)
+                df = process_sheet(val, sheet, self.logger, species_map)
 
-                # Transform oldâ†’new if needed
+                # Transform oldÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢new if needed
                 if sheet.schema == "old":
-                    self.logger.info(f"Transforming old→new for sheet: {sheet.name}")
-                    result = tr.old_to_new(df, class_map, name_canon_map)
+                    self.logger.info(f"Transforming old->new for sheet: {sheet.name}")
+                    result = tr.old_to_new(df, class_map)
                     df = result.df
+
+                    # Normalization summary: Match1 -> Compound changes
+                    try:
+                        if "Match1" in df.columns and "Compound" in df.columns:
+                            mask = df["Match1"].notna() & df["Compound"].notna()
+                            diffs = df.loc[
+                                mask
+                                & (
+                                    df["Match1"].astype(str).str.strip()
+                                    != df["Compound"].astype(str)
+                                ),
+                                ["Match1", "Compound"],
+                            ]
+                            n_norm = len(diffs)
+                            if n_norm:
+                                self.logger.info(
+                                    f"Sheet '{sheet.name}': normalized {n_norm} compound names (showing first 5)"
+                                )
+                                top = diffs.value_counts().head(5)
+                                for (raw, comp), cnt in top.items():
+                                    self.logger.info(f"  '{raw}' -> '{comp}' ({int(cnt)})")
+                    except Exception:
+                        pass
 
                     if not result.unmapped_compounds.empty:
                         self.logger.warning(
@@ -84,8 +108,8 @@ class Orchestrator:
                                 um["Compound"].notna()
                                 & (um["Compound"].astype(str).str.strip() != "")
                             ]
-                        top_missing = um.head(5)
-                        self.logger.warning("Top 5 missing-class compounds:")
+                        top_missing = um.head(20)
+                        self.logger.warning(f"Top {len(top_missing)} missing-class compounds:")
                         for _, r in top_missing.iterrows():
                             try:
                                 cnt = int(r["count"])

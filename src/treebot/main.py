@@ -22,9 +22,10 @@ def run_pipeline(
     classes_path: Path,
     out_dir: Path,
     cfg: Config | None = None,
+    mapping_path: Path | None = None,
 ) -> int:
     orch = _make_orchestrator(cfg or Config())
-    return orch.run(input_path, classes_path, out_dir)
+    return orch.run(input_path, classes_path, mapping_path, out_dir)
 
 
 def main() -> int:
@@ -33,6 +34,12 @@ def main() -> int:
     ap.add_argument("--classes", required=True, type=Path, help="Path to classes.yaml")
     ap.add_argument(
         "--out", required=False, type=Path, default=Path("runs"), help="Output base dir"
+    )
+    ap.add_argument(
+        "--mapping",
+        required=False,
+        type=Path,
+        help="Optional species mapping workbook (Site, CartridgeNum -> PlantSpecies)",
     )
     ap.add_argument("--config", required=False, type=Path, help="Optional YAML config file")
     ap.add_argument(
@@ -53,7 +60,7 @@ def main() -> int:
     cfg = load_config(args.config, overrides=overrides)
 
     try:
-        return run_pipeline(args.input, args.classes, args.out, cfg)
+        return run_pipeline(args.input, args.classes, args.out, cfg, args.mapping)
     except Exception as exc:  # pragma: no cover
         logging.basicConfig(level=logging.ERROR)
         logging.exception("Unhandled exception: %s", exc)

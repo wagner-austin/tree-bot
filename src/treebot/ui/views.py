@@ -31,6 +31,7 @@ def build_main_view(controller: UiController) -> None:
     default_out = default_output_base()
     default_out.mkdir(parents=True, exist_ok=True)
     classes_p = Path("configs/classes.yaml")
+    mapping_path: Optional[Path] = None
     uploads_dir = default_uploads_dir()
     uploads_dir.mkdir(parents=True, exist_ok=True)
 
@@ -47,6 +48,24 @@ def build_main_view(controller: UiController) -> None:
         ui.upload(
             label="Choose .xlsx file", on_upload=on_input_upload, auto_upload=True, multiple=False
         ).props("accept=.xlsx").classes("w-full")
+
+    # Optional Species Mapping Upload
+    with base_card("Optional: Upload Species Mapping", "(Site, CartridgeNum -> PlantSpecies)"):
+        map_label = ui.label("No mapping selected").classes("text-sm text-gray-500")
+
+        def on_map_upload(e: UploadEventArguments) -> None:
+            nonlocal mapping_path
+            dest = save_uploaded_file(uploads_dir, e.name, e.content)
+            mapping_path = dest
+            map_label.text = f"Mapping: {dest.name}"
+            map_label.classes("text-sm text-green-600")
+
+        ui.upload(
+            label="Choose mapping (.xlsx/.csv)",
+            on_upload=on_map_upload,
+            auto_upload=True,
+            multiple=False,
+        ).classes("w-full")
 
     # Process Workbook (Prominent Button)
     ui.separator().classes("my-6")
@@ -75,7 +94,9 @@ def build_main_view(controller: UiController) -> None:
         status_container.update()
 
         cfg: Config = load_config(None)
-        result = await ngrun.io_bound(lambda: controller.run(in_path, classes_p, default_out, cfg))
+        result = await ngrun.io_bound(
+            lambda: controller.run(in_path, classes_p, default_out, cfg, mapping_path)
+        )
 
         # Clear previous result buttons
         result_row.clear()

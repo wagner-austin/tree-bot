@@ -42,6 +42,7 @@ class UiController:
         classes_path: Path,
         out_dir: Path,
         cfg: Config | None,
+        mapping_path: Path | None = None,
     ) -> UiRunResult:
         try:
             cfg2 = cfg or Config()
@@ -54,7 +55,7 @@ class UiController:
                     "out": str(out_dir),
                 },
             )
-            code = run_pipeline(input_path, classes_path, out_dir, cfg2)
+            code = run_pipeline(input_path, classes_path, out_dir, cfg2, mapping_path)
             run_dir = self._latest_run_dir(out_dir, before)
             return UiRunResult(code=code, run_dir=run_dir)
         except Exception as exc:
