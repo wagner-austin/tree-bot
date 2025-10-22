@@ -1,10 +1,10 @@
-﻿# tests
+# tests
 
 Test suite organized by concern:
 
-- `services/validation/*`: header/date/numeric/keys/class consistency
-- `services/transform/*`: old→new mapping, canonicalization
-- `services/aggregate/*`: aggregation results and writer
+- `services/validation/*`: headers, dates, keys, class map, species map
+- `services/transform/*`: old→new mapping (no implicit name canonicalization)
+- `utils/*`: normalization/typo safety checks
 - `ui/*`: controller and basic UI flows
 - `integration/*`: smoke runs and end-to-end scenarios
 
