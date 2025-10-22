@@ -5,7 +5,7 @@ from typing import List, Mapping, Tuple
 import pandas as pd
 
 from ...domain.errors import ErrorCategory, ValidationIssue
-from ...utils.normalize import normalize_text
+from ...utils.normalize import normalize_compound_name
 
 
 def derive_compound_and_class(
@@ -23,7 +23,7 @@ def derive_compound_and_class(
         s = str(val).strip()
         if not s:
             return pd.NA
-        return normalize_text(s)
+        return normalize_compound_name(s)
 
     out["Compound"] = out["Match1"].map(_to_compound)
 

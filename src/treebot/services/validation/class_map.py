@@ -5,7 +5,7 @@ from typing import Dict
 
 import yaml
 
-from ...utils.normalize import normalize_text
+from ...utils.normalize import normalize_compound_name
 
 
 def load_class_map(path: Path) -> Dict[str, str]:
@@ -16,5 +16,5 @@ def load_class_map(path: Path) -> Dict[str, str]:
     for k, v in mp.items():
         if not isinstance(k, str) or not isinstance(v, str):
             continue
-        mapping[normalize_text(k)] = v
+        mapping[normalize_compound_name(k)] = v
     return mapping
