@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import logging
-from typing import List, Mapping, Optional
+from typing import List, Mapping
 
 import pandas as pd
 
@@ -20,9 +20,8 @@ class TransformResult:
 def transform_old_to_new(
     df_old: pd.DataFrame,
     class_map: Mapping[str, str],
-    canon_map: Optional[Mapping[str, str]] = None,
 ) -> TransformResult:
-    final, issues, unmapped = _old_to_new(df_old, class_map, canon_map)
+    final, issues, unmapped = _old_to_new(df_old, class_map)
     return TransformResult(df=final, issues=issues, unmapped_compounds=unmapped)
 
 
@@ -34,7 +33,6 @@ class TransformService:
         self,
         df_old: pd.DataFrame,
         class_map: Mapping[str, str],
-        canon_map: Optional[Mapping[str, str]] = None,
     ) -> TransformResult:
         self.logger.info("Transforming old->new", extra={"rows": len(df_old)})
-        return transform_old_to_new(df_old, class_map, canon_map)
+        return transform_old_to_new(df_old, class_map)

@@ -24,8 +24,8 @@ def test_canonicalization_applied() -> None:
         ]
     )
     class_map = {"isoprene": "Terpene"}
-    canon_map = {"1,3-butadiene, 2-methyl": "isoprene"}
 
-    res = transform_old_to_new(df_old, class_map, canon_map)
-    assert res.df.loc[0, "Compound"] == "isoprene"
-    assert res.df.loc[0, "Class"] == "Terpene"
+    res = transform_old_to_new(df_old, class_map)
+    # Canonicalization removed; ensure we don't silently rewrite names
+    assert res.df.loc[0, "Compound"] == "1, 3-butadiene, 2-methyl"
+    assert pd.isna(res.df.loc[0, "Class"])  # remains unmapped without explicit class
