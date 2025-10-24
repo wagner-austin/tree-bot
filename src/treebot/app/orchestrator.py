@@ -14,8 +14,8 @@ from .container import Container
 from .run_manager import start_run
 from .steps.sheet_processing import process_sheet
 from ..services.output.manifest_writer import write_manifest
-from ..services.aggregate.summary import build_summary
-from ..services.output.summary_writer import write_summary_into_workbook
+from ..services.aggregate.summary import build_summary, SheetConfig
+from ..services.output.summary_writer import write_sections_to_sheet
 
 
 @dataclass(frozen=True)
@@ -201,37 +201,61 @@ class Orchestrator:
             )
             # Single output only (no duplicate stable name)
 
-            # 6. Build and write Summary workbook
+            # 6. Build and write summary sheets (4 sheets total)
             try:
                 q = int(self.cfg.certainty_threshold)
                 min_count = int(self.cfg.frequency_min)
+
+                # Define all output sheets declaratively
+                sheet_configs = [
+                    SheetConfig("Summary", q, None, min_count, None),
+                    SheetConfig("HQ Single", q, None, 1, 1),
+                    SheetConfig("LQ Single", 0, q - 1, 1, 1),
+                    SheetConfig("LQ Multiple", 0, q - 1, min_count, None),
+                ]
+
                 self.logger.info(
-                    "Building Summary",
-                    extra={"quality_threshold": q, "frequency_min": min_count},
+                    "Building summary sheets",
+                    extra={
+                        "quality_threshold": q,
+                        "frequency_min": min_count,
+                        "sheets": [cfg.name for cfg in sheet_configs],
+                    },
                 )
-                sections = build_summary(all_processed, quality_threshold=q, min_count=min_count)
-                if sections:
-                    for sec in sections:
-                        self.logger.info(
-                            f"Summary: {sec.site} > {sec.species}",
-                            extra={
-                                # unique compounds that meet min_count
-                                "unique_compounds_kept": sec.stats.get("unique_compounds", 0),
-                                # total unique compounds prior to min_count filtering
-                                "total_compounds": sec.stats.get("unique_compounds_all", 0),
-                                # total peaks (rows) after and before filtering
-                                "peaks_kept": sec.stats.get("total_peaks", 0),
-                                "peaks_all": sec.stats.get("peaks_all", 0),
-                            },
-                        )
-                    write_summary_into_workbook(std_path, sections)
-                    self.logger.info(
-                        f"Added Summary sheet to {std_path.name}", extra={"sections": len(sections)}
+
+                # Process each sheet config
+                for config in sheet_configs:
+                    sections = build_summary(
+                        all_processed,
+                        quality_min=config.quality_min,
+                        quality_max=config.quality_max,
+                        count_min=config.count_min,
+                        count_max=config.count_max,
                     )
-                else:
-                    self.logger.info("Summary: no sections produced (no qualifying rows)")
+
+                    if sections:
+                        for sec in sections:
+                            self.logger.info(
+                                f"{config.name}: {sec.site} > {sec.species}",
+                                extra={
+                                    "unique_compounds": sec.stats.get("unique_compounds", 0),
+                                    "total_compounds": sec.stats.get("unique_compounds_all", 0),
+                                    "peaks_kept": sec.stats.get("total_peaks", 0),
+                                    "peaks_all": sec.stats.get("peaks_all", 0),
+                                },
+                            )
+                        write_sections_to_sheet(std_path, sections, config.name)
+                        self.logger.info(
+                            f"Added {config.name} sheet to {std_path.name}",
+                            extra={"sections": len(sections)},
+                        )
+                    else:
+                        self.logger.info(
+                            f"{config.name}: no sections produced (no qualifying rows)"
+                        )
+
             except Exception as e:
-                self.logger.warning(f"Summary build failed: {e}")
+                self.logger.warning(f"Summary sheets build failed: {e}")
 
             # 7. Write manifest
             started = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

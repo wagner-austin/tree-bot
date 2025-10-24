@@ -100,9 +100,11 @@ map:
     outs = list((tmp_path / "runs").glob("*/standardized_*.xlsx"))
     assert outs, "standardized.xlsx missing"
 
-    # Read all sheets and concatenate
+    # Read data sheets only (exclude summary sheets)
     xl = pd.ExcelFile(outs[0])
-    all_sheets = [pd.read_excel(outs[0], sheet_name=name) for name in xl.sheet_names]
+    summary_sheets = {"Summary", "HQ Single", "LQ Single", "LQ Multiple"}
+    data_sheet_names = [name for name in xl.sheet_names if name not in summary_sheets]
+    all_sheets = [pd.read_excel(outs[0], sheet_name=name) for name in data_sheet_names]
     df_out = pd.concat(all_sheets, ignore_index=True)
 
     assert len(df_out) == 2

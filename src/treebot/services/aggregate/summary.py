@@ -14,6 +14,17 @@ class Section:
     stats: Dict[str, int | float]
 
 
+@dataclass(frozen=True)
+class SheetConfig:
+    """Configuration for a summary output sheet."""
+
+    name: str
+    quality_min: int
+    quality_max: int | None
+    count_min: int
+    count_max: int | None
+
+
 def _safe_numeric(s: pd.Series) -> pd.Series:
     return pd.to_numeric(s, errors="coerce")
 
@@ -30,13 +41,22 @@ def _first_class_or_mixed(classes: pd.Series) -> str | None:
 
 def build_summary(
     per_sheet: Dict[str, pd.DataFrame],
-    quality_threshold: int,
-    min_count: int,
+    quality_min: int,
+    quality_max: int | None,
+    count_min: int,
+    count_max: int | None,
 ) -> List[Section]:
-    """Build per (Site > Species) compound summary sections.
+    """Build per (Site > Species) compound summary sections with flexible filtering.
 
     Input DataFrames must contain at least: Sheet, Species, RetentionTime,
     Compound, Class, MatchScore.
+
+    Args:
+        per_sheet: Dict of sheet name to DataFrame
+        quality_min: Minimum MatchScore (inclusive)
+        quality_max: Maximum MatchScore (inclusive), None = no upper limit
+        count_min: Minimum compound count (inclusive)
+        count_max: Maximum compound count (inclusive), None = no upper limit
     """
     sections: List[Section] = []
 
@@ -51,10 +71,12 @@ def build_summary(
             # Skip sheets lacking required fields
             continue
 
-        # Filter by quality and presence of Compound
+        # Filter by quality range and presence of Compound
         tmp = df.copy()
         tmp["MatchScore"] = _safe_numeric(tmp["MatchScore"])  # pandas column access
-        tmp = tmp[tmp["MatchScore"].fillna(-1) >= quality_threshold]
+        tmp = tmp[tmp["MatchScore"].fillna(-1) >= quality_min]
+        if quality_max is not None:
+            tmp = tmp[tmp["MatchScore"].fillna(-1) <= quality_max]
         tmp = tmp[tmp["Compound"].astype(str).str.strip() != ""]
         if tmp.empty:
             continue
@@ -113,8 +135,10 @@ def build_summary(
                 continue
 
             out = pd.DataFrame(rows)
-            # Frequency filter and sorting
-            out = out[out["Count"] >= int(min_count)]
+            # Frequency filter by range and sorting
+            out = out[out["Count"] >= int(count_min)]
+            if count_max is not None:
+                out = out[out["Count"] <= int(count_max)]
             if out.empty:
                 continue
             out = out.sort_values(["Count", "Compound"], ascending=[False, True], kind="mergesort")

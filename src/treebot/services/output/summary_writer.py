@@ -11,15 +11,19 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 from ..aggregate.summary import Section
 
 
-def write_summary_into_workbook(std_path: Path, sections: List[Section]) -> None:
-    """Append/replace a 'Summary' sheet in an existing standardized workbook.
+def write_sections_to_sheet(std_path: Path, sections: List[Section], sheet_name: str) -> None:
+    """Append/replace a sheet in an existing standardized workbook.
 
-    Each section is labeled 'Site: <site> | Species: <species> (unique_compounds=..., total_peaks=...)'
+    Each section is labeled 'Site: <site> | Species: <species> (unique_compounds=..., total_compounds=...)'
     followed by a table with ordered columns: Compound, Compound Class, RetentionMin, RetentionMax,
-    RtRange, Count, Comments.
+    RtRange, AvgMatchQuality, Count, Comments.
+
+    Args:
+        std_path: Path to the standardized workbook
+        sections: List of Section objects to write
+        sheet_name: Name of the sheet to create/replace
     """
     with pd.ExcelWriter(std_path, engine="openpyxl", mode="a", if_sheet_exists="replace") as writer:
-        sheet_name = "Summary"
         # Start with an empty frame so the sheet exists
         pd.DataFrame().to_excel(writer, sheet_name=sheet_name, index=False)
         ws = writer.sheets[sheet_name]
@@ -33,10 +37,10 @@ def write_summary_into_workbook(std_path: Path, sections: List[Section]) -> None
             current_row += 1
 
         for section in sections:
-            # Section header with clearer labels: kept metrics
+            # Section header with clearer labels
             hdr = (
                 f"Site: {section.site} | Species: {section.species} "
-                f"(unique_compounds_kept={section.stats.get('unique_compounds', 0)}, "
+                f"(unique_compounds={section.stats.get('unique_compounds', 0)}, "
                 f"total_compounds={section.stats.get('unique_compounds_all', 0)})"
             )
             _write_header(hdr)
@@ -75,7 +79,8 @@ def write_summary_into_workbook(std_path: Path, sections: List[Section]) -> None
             max_row = start_row + len(df)
             max_col = len(df.columns)
             ref = f"A{start_row}:{get_column_letter(max_col)}{max_row}"
-            display = f"{section.site}_{section.species}".replace(" ", "_")[:31]
+            # Make table name unique across entire workbook by including sheet name
+            display = f"{sheet_name}_{section.site}_{section.species}".replace(" ", "_")[:31]
             table = Table(displayName=display, ref=ref)
             style = TableStyleInfo(
                 name="TableStyleMedium2",
