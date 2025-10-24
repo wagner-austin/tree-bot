@@ -21,21 +21,20 @@ def process_sheet(
 
     # Fill down identity columns within the sheet: DataFolderName, CartridgeNum (skip DateRun)
     try:
-        df, fill_counts, examples, example_values = val.forward_fill_identities(df)
-        total_filled = sum(fill_counts.values())
+        df, counts, examples, example_values = val.forward_fill_identities(df)
+        total_filled = counts["DataFolderName"] + counts["CartridgeNum"]
         if total_filled:
             parts: list[str] = []
-            if fill_counts.get("DataFolderName", 0):
-                parts.append(f"DataFolderName: {fill_counts['DataFolderName']}")
-            if fill_counts.get("CartridgeNum", 0):
-                parts.append(f"CartridgeNum: {fill_counts['CartridgeNum']}")
+            if counts["DataFolderName"]:
+                parts.append(f"DataFolderName: {counts['DataFolderName']}")
+            if counts["CartridgeNum"]:
+                parts.append(f"CartridgeNum: {counts['CartridgeNum']}")
             if parts:
                 logger.info(f"Sheet '{sh.name}': forward-filled " + ", ".join(parts))
-                # Show first few row indices per column as examples
                 for col in ("DataFolderName", "CartridgeNum"):
-                    idxs = examples.get(col) or []
-                    vals = example_values.get(col) or []
-                    if fill_counts.get(col, 0) and idxs:
+                    idxs = examples[col]
+                    vals = example_values[col]
+                    if counts[col] and idxs:
                         pairs = ", ".join(f"{i}='{v}'" for i, v in list(zip(idxs, vals))[:5])
                         logger.info(f"  {col} examples (first 5): {pairs}")
     except Exception:

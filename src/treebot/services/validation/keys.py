@@ -57,14 +57,29 @@ def forward_fill_columns(
     - Returns (new_df, counts) where counts[col] = number of cells filled
     """
     df2 = df.copy()
-    counts: ForwardFillCounts = {"DataFolderName": 0, "CartridgeNum": 0}
-    examples: ForwardFillExamples = {"DataFolderName": [], "CartridgeNum": []}
-    example_values: ForwardFillValues = {"DataFolderName": [], "CartridgeNum": []}
+    # Accumulate generically, then coerce to fixed-key TypedDicts
+    _counts: dict[str, int] = {}
+    _examples: dict[str, list[int]] = {}
+    _values: dict[str, list[str]] = {}
+
     for col in columns:
         if col in df2.columns:
             filled_series, n, idxs, vals = _forward_fill_series(df2[col])
             df2[col] = filled_series
-            counts[col] = n
-            examples[col] = idxs
-            example_values[col] = vals
+            _counts[col] = n
+            _examples[col] = idxs
+            _values[col] = vals
+
+    counts: ForwardFillCounts = {
+        "DataFolderName": _counts.get("DataFolderName", 0),
+        "CartridgeNum": _counts.get("CartridgeNum", 0),
+    }
+    examples: ForwardFillExamples = {
+        "DataFolderName": _examples.get("DataFolderName", []),
+        "CartridgeNum": _examples.get("CartridgeNum", []),
+    }
+    example_values: ForwardFillValues = {
+        "DataFolderName": _values.get("DataFolderName", []),
+        "CartridgeNum": _values.get("CartridgeNum", []),
+    }
     return df2, counts, examples, example_values
