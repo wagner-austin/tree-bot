@@ -8,22 +8,27 @@ from typing import BinaryIO
 
 
 def open_path(path: Path) -> None:
-    """Open a file or directory in the OS default handler, cross-platform.
+    """Open a path via the OS default handler and try to bring it to front on click.
 
-    - Windows: uses os.startfile when available
-    - macOS: uses 'open'
-    - Linux/other: uses 'xdg-open' if available
+    - Windows: prefer `cmd /c start "" <path>` which reliably focuses Explorer.
+    - macOS: `open <path>` (Finder comes to front).
+    - Linux: `xdg-open <path>` (focus behavior depends on DE).
     """
     try:
         if sys.platform.startswith("win"):
-            startfile = getattr(os, "startfile", None)
-            if callable(startfile):
-                startfile(str(path))
-                return
-        elif sys.platform == "darwin":
+            # Use `start` via cmd to better foreground the window.
+            try:
+                subprocess.run(["cmd", "/c", "start", "", str(path)], check=False)
+            except Exception:
+                # Fallback to os.startfile if available
+                startfile = getattr(os, "startfile", None)
+                if callable(startfile):
+                    startfile(str(path))
+            return
+        if sys.platform == "darwin":
             subprocess.run(["open", str(path)], check=False)
             return
-        # Fallback for Linux/others
+        # Linux/others
         subprocess.run(["xdg-open", str(path)], check=False)
     except Exception:
         # Best-effort; UI shows clear links regardless

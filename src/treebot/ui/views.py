@@ -150,12 +150,7 @@ def build_main_view(controller: UiController) -> None:
                             on_click=lambda p=latest: open_path(p),
                         ).classes("bg-blue-600 text-white px-4 py-2")
 
-                    manifest = result.run_dir / "run_manifest.yaml"
-                    if manifest.exists():
-                        ui.button(
-                            "📄 Open Manifest",
-                            on_click=lambda: open_path(manifest),
-                        ).classes("px-4 py-2")
+                    # Manifest button intentionally hidden per UX request
         else:
             status.text = f"⚠ Processing completed with issues.\n\nThe pipeline encountered problems (exit code {result.code}). Check the output folder for logs and partial results."
             status.classes("text-lg font-semibold text-orange-600")
