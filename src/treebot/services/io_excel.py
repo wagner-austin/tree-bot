@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Literal, Optional
+from typing import Literal, Optional, cast
 
 import pandas as pd
 import yaml
@@ -12,16 +12,18 @@ import yaml
 SchemaName = Literal["old", "new"]
 
 
-_schema_cache: dict[str, Any] | None = None
+from ..types import SchemaConfig
+
+_schema_cache: SchemaConfig | None = None
 
 
-def _load_schema() -> dict[str, Any]:
+def _load_schema() -> SchemaConfig:
     """Load simplified schema.yaml."""
     global _schema_cache
     if _schema_cache is None:
         schema_path = Path("configs/schema.yaml")
         with open(schema_path, "r", encoding="utf-8") as f:
-            _schema_cache = yaml.safe_load(f)
+            _schema_cache = cast(SchemaConfig, yaml.safe_load(f))
     return _schema_cache
 
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Optional
+from dataclasses import dataclass
 
 from nicegui import ui, run as ngrun
 from nicegui.events import UploadEventArguments
@@ -27,7 +28,11 @@ def build_main_view(controller: UiController) -> None:
     )
 
     # State
-    state: dict[str, Optional[Path]] = {"input_path": None}
+    @dataclass
+    class UiState:
+        input_path: Optional[Path] = None
+
+    state = UiState()
     default_out = default_output_base()
     default_out.mkdir(parents=True, exist_ok=True)
     classes_p = Path("configs/classes.yaml")
@@ -41,7 +46,7 @@ def build_main_view(controller: UiController) -> None:
 
         def on_input_upload(e: UploadEventArguments) -> None:
             dest = save_uploaded_file(uploads_dir, e.name, e.content)
-            state["input_path"] = dest
+            state.input_path = dest
             input_label.text = f"✓ {dest.name}"
             input_label.classes("text-sm text-green-600")
 
@@ -83,7 +88,7 @@ def build_main_view(controller: UiController) -> None:
     result_row = ui.row().classes("gap-2 mb-6 hidden")
 
     async def do_run() -> None:
-        in_path = state["input_path"]
+        in_path = state.input_path
         if not in_path or not in_path.exists():
             status.text = "⚠ Please upload a results workbook first"
             status.classes("text-lg font-semibold text-orange-600")

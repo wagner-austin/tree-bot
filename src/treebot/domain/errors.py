@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any, Mapping, Optional
+from typing import Mapping, Optional
 
 
 class ErrorCategory(str, Enum):
@@ -17,4 +17,4 @@ class ValidationIssue:
     code: str
     message: str
     row_index: Optional[int] = None
-    details: Optional[Mapping[str, Any]] = None
+    details: Optional[Mapping[str, object]] = None

@@ -5,7 +5,7 @@ import logging
 from dataclasses import dataclass
 import sys
 from pathlib import Path
-from typing import Any, Dict
+from typing import MutableMapping
 
 
 @dataclass(frozen=True)
@@ -16,7 +16,7 @@ class LogFiles:
 
 class JsonLineFormatter(logging.Formatter):
     def format(self, record: logging.LogRecord) -> str:
-        payload: Dict[str, Any] = {
+        payload: MutableMapping[str, object] = {
             "level": record.levelname,
             "name": record.name,
             "message": record.getMessage(),

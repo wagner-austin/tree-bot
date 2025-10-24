@@ -1,24 +1,24 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
 
 import pandas as pd
 import yaml
 
 from ..io_excel import SchemaName
+from ...types import SchemaConfig
 
 
-_schema_config: dict[str, Any] | None = None
+_schema_config: SchemaConfig | None = None
 
 
-def _load_schema_config() -> dict[str, Any]:
+def _load_schema_config() -> SchemaConfig:
     """Load schema.yaml once and cache it."""
     global _schema_config
     if _schema_config is None:
         schema_path = Path(__file__).parent.parent.parent.parent.parent / "configs" / "schema.yaml"
         with open(schema_path, "r", encoding="utf-8") as f:
-            _schema_config = yaml.safe_load(f)
+            _schema_config = yaml.safe_load(f)  # type: ignore[assignment]
     return _schema_config
 
 

@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Dict, Iterable, Mapping, Optional, Tuple
+from typing import Iterable, Mapping, Optional, Tuple
 
 import pandas as pd
 
 
 # Canonical headers we support from the mapping workbook
-_HEADER_ALIASES: Dict[str, str] = {
+_HEADER_ALIASES: dict[str, str] = {
     "sample.num": "SampleNumber",
     "samplenumber": "SampleNumber",
     "sample": "SampleNumber",
@@ -28,7 +28,7 @@ def _norm_header(name: str) -> str:
 
 
 def _rename_columns(df: pd.DataFrame) -> pd.DataFrame:
-    ren: Dict[str, str] = {}
+    ren: dict[str, str] = {}
     for col in df.columns:
         key = _norm_header(str(col))
         if key in _HEADER_ALIASES:
@@ -50,7 +50,7 @@ def _norm_site_token(s: str) -> str:
 
 
 # Site tokens to canonical site keys used for joining
-_SITE_TOKEN_TO_KEY: Dict[str, str] = {
+_SITE_TOKEN_TO_KEY: dict[str, str] = {
     # Emerson Oaks
     "emerson": "emerson",
     "emersonoaks": "emerson",
@@ -105,7 +105,7 @@ def _iter_mapping_frames(path: Path) -> Iterable[pd.DataFrame]:
             yield pd.read_csv(path, sep="\t")
 
 
-def load_species_map(path: Path) -> Tuple[Dict[Tuple[str, str], str], list[Tuple[str, str]]]:
+def load_species_map(path: Path) -> Tuple[dict[Tuple[str, str], str], list[Tuple[str, str]]]:
     """Load (Site, CartridgeNum) -> PlantSpecies mapping from workbook.
 
     - Accepts multiple sheets; applies header aliasing (old -> canonical)
@@ -113,8 +113,8 @@ def load_species_map(path: Path) -> Tuple[Dict[Tuple[str, str], str], list[Tuple
     - Returns (map, ambiguous_keys)
     - Ambiguous keys are (site_key, cartridge) pairs with conflicting PlantSpecies
     """
-    mapping: Dict[Tuple[str, str], str] = {}
-    conflicts: Dict[Tuple[str, str], set[str]] = {}
+    mapping: dict[Tuple[str, str], str] = {}
+    conflicts: dict[Tuple[str, str], set[str]] = {}
 
     for raw in _iter_mapping_frames(path):
         df = _rename_columns(raw)

@@ -1,9 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Dict, List
+from dataclasses import dataclass, asdict
+from typing import List, Mapping
 
 import pandas as pd
+from ...types import SectionStats
 
 
 @dataclass(frozen=True)
@@ -11,7 +12,7 @@ class Section:
     site: str
     species: str
     df: pd.DataFrame
-    stats: Dict[str, int | float]
+    stats: SectionStats
 
 
 @dataclass(frozen=True)
@@ -40,7 +41,7 @@ def _first_class_or_mixed(classes: pd.Series) -> str | None:
 
 
 def build_summary(
-    per_sheet: Dict[str, pd.DataFrame],
+    per_sheet: Mapping[str, pd.DataFrame],
     quality_min: int,
     quality_max: int | None,
     count_min: int,
@@ -91,7 +92,18 @@ def build_summary(
                 continue
 
             # Aggregate by Compound
-            rows: List[Dict[str, object]] = []
+            @dataclass(frozen=True)
+            class SummaryRow:
+                Compound: str
+                _Compound_Class: str | None
+                RetentionMin: float
+                RetentionMax: float
+                RtRange: float
+                AvgMatchQuality: float
+                Count: int
+                Comments: str
+
+            rows: List[SummaryRow] = []
             # Pre-filter stats (before min_count)
             unique_compounds_all = int(
                 sub["Compound"].astype(str).str.strip().replace("", pd.NA).dropna().nunique()
@@ -117,24 +129,37 @@ def build_summary(
                             comment_val = vv
                             break
                 rows.append(
-                    {
-                        "Compound": str(comp),
-                        "Compound Class": cls,
-                        "RetentionMin": rt_min,
-                        "RetentionMax": rt_max,
-                        "RtRange": round(rt_range, 3) if pd.notna(rt_range) else rt_range,
-                        "AvgMatchQuality": round(avg_match_quality, 1)
-                        if pd.notna(avg_match_quality)
-                        else avg_match_quality,
-                        "Count": int(len(g)),
-                        "Comments": comment_val,
-                    }
+                    SummaryRow(
+                        Compound=str(comp),
+                        _Compound_Class=cls,
+                        RetentionMin=rt_min,
+                        RetentionMax=rt_max,
+                        RtRange=round(rt_range, 3) if pd.notna(rt_range) else rt_range,
+                        AvgMatchQuality=(
+                            round(avg_match_quality, 1) if pd.notna(avg_match_quality) else avg_match_quality
+                        ),
+                        Count=int(len(g)),
+                        Comments=comment_val,
+                    )
                 )
 
             if not rows:
                 continue
 
-            out = pd.DataFrame(rows)
+            # Convert dataclass rows to DataFrame with desired column names
+            out = pd.DataFrame([
+                {
+                    "Compound": r.Compound,
+                    "Compound Class": r._Compound_Class,
+                    "RetentionMin": r.RetentionMin,
+                    "RetentionMax": r.RetentionMax,
+                    "RtRange": r.RtRange,
+                    "AvgMatchQuality": r.AvgMatchQuality,
+                    "Count": r.Count,
+                    "Comments": r.Comments,
+                }
+                for r in rows
+            ])
             # Frequency filter by range and sorting
             out = out[out["Count"] >= int(count_min)]
             if count_max is not None:
@@ -147,7 +172,7 @@ def build_summary(
             unique_compounds_kept = int(out["Compound"].nunique())
             peaks_kept = int(out["Count"].sum())
 
-            stats: Dict[str, int | float] = {
+            stats: SectionStats = {
                 "unique_compounds": unique_compounds_kept,  # kept
                 "total_peaks": peaks_kept,  # kept
                 "unique_compounds_all": unique_compounds_all,

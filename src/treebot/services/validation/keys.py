@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import pandas as pd
+from ...types import ForwardFillCounts, ForwardFillExamples, ForwardFillValues
 
 
 def trim_cartridge(df: pd.DataFrame) -> pd.DataFrame:
@@ -48,7 +49,7 @@ def _forward_fill_series(
 
 def forward_fill_columns(
     df: pd.DataFrame, columns: list[str]
-) -> tuple[pd.DataFrame, dict[str, int], dict[str, list[int]], dict[str, list[str]]]:
+) -> tuple[pd.DataFrame, ForwardFillCounts, ForwardFillExamples, ForwardFillValues]:
     """Forward-fill selected columns, treating blanks as missing.
 
     - Only affects provided columns; no cross-column logic
@@ -56,9 +57,9 @@ def forward_fill_columns(
     - Returns (new_df, counts) where counts[col] = number of cells filled
     """
     df2 = df.copy()
-    counts: dict[str, int] = {}
-    examples: dict[str, list[int]] = {}
-    example_values: dict[str, list[str]] = {}
+    counts: ForwardFillCounts = {"DataFolderName": 0, "CartridgeNum": 0}
+    examples: ForwardFillExamples = {"DataFolderName": [], "CartridgeNum": []}
+    example_values: ForwardFillValues = {"DataFolderName": [], "CartridgeNum": []}
     for col in columns:
         if col in df2.columns:
             filled_series, n, idxs, vals = _forward_fill_series(df2[col])
@@ -66,8 +67,4 @@ def forward_fill_columns(
             counts[col] = n
             examples[col] = idxs
             example_values[col] = vals
-        else:
-            counts[col] = 0
-            examples[col] = []
-            example_values[col] = []
     return df2, counts, examples, example_values
