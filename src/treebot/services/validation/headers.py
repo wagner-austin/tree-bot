@@ -7,7 +7,7 @@ import yaml
 
 from ..io_excel import SchemaName
 from ...types import SchemaConfig
-from typing import MutableMapping, Mapping
+from typing import MutableMapping, Mapping, cast
 
 
 _schema_config: SchemaConfig | None = None
@@ -19,7 +19,7 @@ def _load_schema_config() -> SchemaConfig:
     if _schema_config is None:
         schema_path = Path(__file__).parent.parent.parent.parent.parent / "configs" / "schema.yaml"
         with open(schema_path, "r", encoding="utf-8") as f:
-            _schema_config = yaml.safe_load(f)  # type: ignore[assignment]
+            _schema_config = cast(SchemaConfig, yaml.safe_load(f))
     return _schema_config
 
 

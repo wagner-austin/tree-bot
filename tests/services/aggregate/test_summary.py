@@ -109,7 +109,17 @@ def test_write_summary_into_workbook(tmp_path: Path) -> None:
 
     from treebot.services.aggregate.summary import Section
 
-    sec = Section(site="EmersonOaks", species="artcal", df=df_section, stats={})
+    sec = Section(
+        site="EmersonOaks",
+        species="artcal",
+        df=df_section,
+        stats={
+            "unique_compounds": 0,
+            "total_peaks": 0,
+            "unique_compounds_all": 0,
+            "peaks_all": 0,
+        },
+    )
     write_sections_to_sheet(std_path, [sec], "Summary")
 
     # Read back Summary sheet to verify content
@@ -143,7 +153,17 @@ def test_write_multi_sheets_unique_table_names(tmp_path: Path) -> None:
     )
     from treebot.services.aggregate.summary import Section
 
-    sec = Section(site="EmersonOaks", species="artcal", df=df_section, stats={})
+    sec = Section(
+        site="EmersonOaks",
+        species="artcal",
+        df=df_section,
+        stats={
+            "unique_compounds": 0,
+            "total_peaks": 0,
+            "unique_compounds_all": 0,
+            "peaks_all": 0,
+        },
+    )
 
     # Write to two summary sheets; should not raise due to table name collision
     write_sections_to_sheet(std_path, [sec], "Summary")

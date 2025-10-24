@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from typing import List, Mapping
 
 import pandas as pd
@@ -136,7 +136,9 @@ def build_summary(
                         RetentionMax=rt_max,
                         RtRange=round(rt_range, 3) if pd.notna(rt_range) else rt_range,
                         AvgMatchQuality=(
-                            round(avg_match_quality, 1) if pd.notna(avg_match_quality) else avg_match_quality
+                            round(avg_match_quality, 1)
+                            if pd.notna(avg_match_quality)
+                            else avg_match_quality
                         ),
                         Count=int(len(g)),
                         Comments=comment_val,
@@ -147,19 +149,21 @@ def build_summary(
                 continue
 
             # Convert dataclass rows to DataFrame with desired column names
-            out = pd.DataFrame([
-                {
-                    "Compound": r.Compound,
-                    "Compound Class": r._Compound_Class,
-                    "RetentionMin": r.RetentionMin,
-                    "RetentionMax": r.RetentionMax,
-                    "RtRange": r.RtRange,
-                    "AvgMatchQuality": r.AvgMatchQuality,
-                    "Count": r.Count,
-                    "Comments": r.Comments,
-                }
-                for r in rows
-            ])
+            out = pd.DataFrame(
+                [
+                    {
+                        "Compound": r.Compound,
+                        "Compound Class": r._Compound_Class,
+                        "RetentionMin": r.RetentionMin,
+                        "RetentionMax": r.RetentionMax,
+                        "RtRange": r.RtRange,
+                        "AvgMatchQuality": r.AvgMatchQuality,
+                        "Count": r.Count,
+                        "Comments": r.Comments,
+                    }
+                    for r in rows
+                ]
+            )
             # Frequency filter by range and sorting
             out = out[out["Count"] >= int(count_min)]
             if count_max is not None:

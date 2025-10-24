@@ -9,10 +9,9 @@ import pandas as pd
 import yaml
 
 
-SchemaName = Literal["old", "new"]
-
-
 from ..types import SchemaConfig
+
+SchemaName = Literal["old", "new"]
 
 _schema_cache: SchemaConfig | None = None
 

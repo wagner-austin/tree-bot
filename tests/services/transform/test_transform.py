@@ -52,6 +52,7 @@ def test_transform_unmapped_class_records_issue() -> None:
         ]
     )
     from typing import Mapping
+
     class_map: Mapping[str, str] = {}
 
     res = transform_old_to_new(df_old, class_map)

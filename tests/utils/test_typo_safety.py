@@ -8,7 +8,7 @@ from __future__ import annotations
 from treebot.utils.normalize import _EMBEDDED_TYPO_MAP as _TYPO_MAP
 
 
-def test_no_substring_collisions():
+def test_no_substring_collisions() -> None:
     """Ensure no typo key appears as a substring in any correction value.
 
     This prevents dangerous cascading replacements where:
@@ -24,7 +24,7 @@ def test_no_substring_collisions():
                 )
 
 
-def test_no_cascading_patterns():
+def test_no_cascading_patterns() -> None:
     """Ensure no correction value contains another typo key.
 
     This prevents cases where:
@@ -40,7 +40,7 @@ def test_no_cascading_patterns():
                 )
 
 
-def test_minimum_length_recommendation():
+def test_minimum_length_recommendation() -> None:
     """Warn if typo keys are very short (recommendation: ≥5 chars).
 
     Short typo keys are more likely to cause unintended replacements.
@@ -57,7 +57,7 @@ def test_minimum_length_recommendation():
         print("Consider reviewing these carefully.")
 
 
-def test_typo_keys_always_incorrect():
+def test_typo_keys_always_incorrect() -> None:
     """Document that typo keys should be fragments that are ALWAYS wrong.
 
     This is a documentation test - it doesn't actually verify correctness,
@@ -72,13 +72,13 @@ def test_typo_keys_always_incorrect():
     )
 
 
-def test_no_duplicate_targets():
+def test_no_duplicate_targets() -> None:
     """Ensure no two different typos map to the same correction.
 
     This is allowed, but worth documenting (e.g., 'biyclo' and 'bicylclo'
     both -> 'bicyclo' is fine).
     """
-    corrections = {}
+    corrections: dict[str, str] = {}
     duplicates = []
 
     for typo, correct in _TYPO_MAP.items():

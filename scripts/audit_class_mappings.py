@@ -10,9 +10,10 @@ import re
 import yaml
 from pathlib import Path
 from collections import defaultdict
+from typing import Mapping, MutableMapping, Sequence
 
 # Canonicalize class synonyms
-CANON = {
+CANON: Mapping[str, str] = {
     "carboxylic_acid": "organic.acid",
     "silicone": "siloxane",
     "organosiloxane": "siloxane",
@@ -20,7 +21,7 @@ CANON = {
 
 # Ordered rules: more specific patterns first
 # Each rule: (regex, set of acceptable classes)
-RULES = [
+RULES: Sequence[tuple[re.Pattern[str], set[str]]] = [
     (re.compile(r"thiol$", re.I), {"thiol"}),
     (re.compile(r"\boic acid\b", re.I), {"organic.acid"}),
     (re.compile(r"\bacid\b", re.I), {"organic.acid"}),  # after oic acid
@@ -52,7 +53,7 @@ RULES = [
 ]
 
 
-def load_mappings() -> dict[str, str]:
+def load_mappings() -> Mapping[str, str]:
     """Load class mappings from classes.yaml."""
     p = Path(__file__).resolve().parent.parent / "configs" / "classes.yaml"
     with p.open("r", encoding="utf-8") as f:
@@ -63,7 +64,12 @@ def load_mappings() -> dict[str, str]:
     m = data.get("map", {})
     if not isinstance(m, dict):
         raise ValueError("classes.yaml: top-level 'map' must be a dict")
-    return m
+    # Normalize key/value types to str
+    out: MutableMapping[str, str] = {}
+    for k, v in m.items():
+        if isinstance(k, str) and isinstance(v, str):
+            out[k] = v
+    return out
 
 
 def canon(cls: str) -> str:

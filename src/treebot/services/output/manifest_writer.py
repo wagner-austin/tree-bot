@@ -32,8 +32,12 @@ def write_manifest(
     import yaml
 
     inputs: ManifestInputs = {
-        "results": cast(ManifestInputsEntry, {"path": str(input_path), "sha256": sha256_file(input_path)}),
-        "classes": cast(ManifestInputsEntry, {"path": str(classes_path), "sha256": sha256_file(classes_path)}),
+        "results": cast(
+            ManifestInputsEntry, {"path": str(input_path), "sha256": sha256_file(input_path)}
+        ),
+        "classes": cast(
+            ManifestInputsEntry, {"path": str(classes_path), "sha256": sha256_file(classes_path)}
+        ),
     }
 
     params: ManifestParameters = {
@@ -64,4 +68,3 @@ def write_manifest(
     logger.info("Writing run_manifest.yaml", extra={"path": str(out_path)})
     with out_path.open("w", encoding="utf-8") as f:
         yaml.safe_dump(manifest, f, sort_keys=False, allow_unicode=True)
-

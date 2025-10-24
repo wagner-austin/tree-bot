@@ -53,6 +53,7 @@ class Orchestrator:
             class_map = val.load_class_map(classes_path)
             # 2b. Load species map (optional)
             from typing import Mapping, Tuple
+
             species_map: Mapping[Tuple[str, str], str] | None = None
             if mapping_path is not None:
                 try:
@@ -64,6 +65,7 @@ class Orchestrator:
 
             # 3. Process sheets: normalize headers + transform oldÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢new
             from typing import MutableMapping
+
             all_processed: MutableMapping[str, pd.DataFrame] = {}
 
             for sheet in sheets:
