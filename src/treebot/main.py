@@ -46,6 +46,18 @@ def main() -> int:
         "--max-errors", required=False, type=int, default=50, help="Max errors to show in reports"
     )
     ap.add_argument(
+        "--quality-threshold",
+        required=False,
+        type=int,
+        help="Minimum Match1 quality (MatchScore) to include in Summary (default from config)",
+    )
+    ap.add_argument(
+        "--min-count",
+        required=False,
+        type=int,
+        help="Minimum frequency per compound in Summary (default from config)",
+    )
+    ap.add_argument(
         "--stage",
         required=False,
         choices=["full", "headers"],
@@ -54,7 +66,12 @@ def main() -> int:
     )
     args = ap.parse_args()
 
-    overrides = {"max_errors": args.max_errors}
+    overrides = {
+        "max_errors": args.max_errors,
+        # Map CLI names to existing config keys
+        "certainty_threshold": args.quality_threshold,
+        "frequency_min": args.min_count,
+    }
     if args.stage:
         overrides["pipeline_stage"] = args.stage
     cfg = load_config(args.config, overrides=overrides)

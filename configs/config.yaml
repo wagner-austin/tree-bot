@@ -1,5 +1,5 @@
 pipeline_version: v1.0
-certainty_threshold: 80
+certainty_threshold: 70
 frequency_min: 2
 site_mode: sheetname
 strict_fail: true

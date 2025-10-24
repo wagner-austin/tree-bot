@@ -14,6 +14,8 @@ from .container import Container
 from .run_manager import start_run
 from .steps.sheet_processing import process_sheet
 from ..services.output.manifest_writer import write_manifest
+from ..services.aggregate.summary import build_summary
+from ..services.output.summary_writer import write_summary_into_workbook
 
 
 @dataclass(frozen=True)
@@ -198,6 +200,38 @@ class Orchestrator:
                 f"Wrote {std_path.name} ({len(all_processed)} sheets, {total_rows} rows)"
             )
             # Single output only (no duplicate stable name)
+
+            # 6. Build and write Summary workbook
+            try:
+                q = int(self.cfg.certainty_threshold)
+                min_count = int(self.cfg.frequency_min)
+                self.logger.info(
+                    "Building Summary",
+                    extra={"quality_threshold": q, "frequency_min": min_count},
+                )
+                sections = build_summary(all_processed, quality_threshold=q, min_count=min_count)
+                if sections:
+                    for sec in sections:
+                        self.logger.info(
+                            f"Summary: {sec.site} > {sec.species}",
+                            extra={
+                                # unique compounds that meet min_count
+                                "unique_compounds_kept": sec.stats.get("unique_compounds", 0),
+                                # total unique compounds prior to min_count filtering
+                                "total_compounds": sec.stats.get("unique_compounds_all", 0),
+                                # total peaks (rows) after and before filtering
+                                "peaks_kept": sec.stats.get("total_peaks", 0),
+                                "peaks_all": sec.stats.get("peaks_all", 0),
+                            },
+                        )
+                    write_summary_into_workbook(std_path, sections)
+                    self.logger.info(
+                        f"Added Summary sheet to {std_path.name}", extra={"sections": len(sections)}
+                    )
+                else:
+                    self.logger.info("Summary: no sections produced (no qualifying rows)")
+            except Exception as e:
+                self.logger.warning(f"Summary build failed: {e}")
 
             # 7. Write manifest
             started = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
