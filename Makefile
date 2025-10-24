@@ -21,7 +21,7 @@ format:
 	-$(POETRY) run ruff format .
 
 mypy:
-	$(POETRY) run mypy --strict src
+	$(POETRY) run mypy --strict
 
 test:
 	$(POETRY) run pytest -q
@@ -49,4 +49,3 @@ ifeq ($(strip $(INPUT)),)
 	$(error Usage: make run-cli INPUT=path\to\results.xlsx [CLASSES=configs\classes.yaml] [MAPPING=path\to\mapping.xlsx] [OUT=runs] [CONFIG=configs\config.yaml])
 endif
 	$(POETRY) run python -m treebot.main --input $(INPUT) --classes $(CLASSES) $(MAPARG) $(OUTARG) $(CFGARG)
-

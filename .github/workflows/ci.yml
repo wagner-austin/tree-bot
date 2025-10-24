@@ -50,8 +50,7 @@ jobs:
           poetry run ruff format --check .
 
       - name: mypy (strict)
-        run: poetry run mypy --strict src
+        run: poetry run mypy --strict
 
       - name: Tests
         run: poetry run pytest -q
-

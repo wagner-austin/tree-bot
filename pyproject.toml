@@ -36,7 +36,7 @@ strict = true
 warn_unused_configs = true
 pretty = true
 show_error_codes = true
-files = ["src"]
+files = ["src", "tests", "scripts"]
 plugins = []
 ignore_missing_imports = false
 
