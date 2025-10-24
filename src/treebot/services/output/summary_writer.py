@@ -47,18 +47,36 @@ def write_sections_to_sheet(std_path: Path, sections: List[Section], sheet_name:
 
             # Write table starting at current_row
             start_row = current_row
-            # Ensure requested column order
-            cols = [
-                "Compound",
-                "Compound Class",
-                "RetentionMin",
-                "RetentionMax",
-                "RtRange",
-                "AvgMatchQuality",
-                "Count",
-                "Comments",
-            ]
-            df = section.df.reindex(columns=cols)
+            # For "Single" sheets, prefer a single RetentionTime column
+            single_mode = "single" in sheet_name.lower()
+            if single_mode:
+                df = section.df.copy()
+                if "RetentionTime" not in df.columns:
+                    if "RetentionMin" in df.columns:
+                        df["RetentionTime"] = df["RetentionMin"]
+                    else:
+                        df["RetentionTime"] = None
+                cols = [
+                    "Compound",
+                    "Compound Class",
+                    "RetentionTime",
+                    "AvgMatchQuality",
+                    "Count",
+                    "Comments",
+                ]
+                df = df.reindex(columns=cols)
+            else:
+                cols = [
+                    "Compound",
+                    "Compound Class",
+                    "RetentionMin",
+                    "RetentionMax",
+                    "RtRange",
+                    "AvgMatchQuality",
+                    "Count",
+                    "Comments",
+                ]
+                df = section.df.reindex(columns=cols)
 
             # Write headers manually
             for col_idx, header in enumerate(cols, start=1):
@@ -92,11 +110,16 @@ def write_sections_to_sheet(std_path: Path, sections: List[Section], sheet_name:
             table.tableStyleInfo = style
             ws.add_table(table)
 
-            # Basic column width
+            # Basic column width (make Compound/Comments columns wider)
             for idx, header in enumerate(cols, start=1):
                 col = get_column_letter(idx)
                 base = max(len(str(header)), 12) + 2
-                ws.column_dimensions[col].width = min(40, base)
+                if header == "Compound":
+                    ws.column_dimensions[col].width = 50
+                elif header == "Comments":
+                    ws.column_dimensions[col].width = 60
+                else:
+                    ws.column_dimensions[col].width = min(40, base)
 
             # One blank line gap
             current_row = max_row + 2

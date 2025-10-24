@@ -102,7 +102,8 @@ map:
 
     # Read data sheets only (exclude summary sheets)
     xl = pd.ExcelFile(outs[0])
-    summary_sheets = {"Summary", "HQ Single", "LQ Single", "LQ Multiple"}
+    # Exclude all summary sheets written by the orchestrator
+    summary_sheets = {"HQ Multiple", "HQ Single", "Lq Multiple", "Lq Single", "Summary"}
     data_sheet_names = [name for name in xl.sheet_names if name not in summary_sheets]
     all_sheets = [pd.read_excel(outs[0], sheet_name=name) for name in data_sheet_names]
     df_out = pd.concat(all_sheets, ignore_index=True)

@@ -208,10 +208,12 @@ class Orchestrator:
 
                 # Define all output sheets declaratively
                 sheet_configs = [
-                    SheetConfig("Summary", q, None, min_count, None),
+                    # High-quality, multiple occurrences first
+                    SheetConfig("HQ Multiple", q, None, min_count, None),
                     SheetConfig("HQ Single", q, None, 1, 1),
-                    SheetConfig("LQ Single", 0, q - 1, 1, 1),
-                    SheetConfig("LQ Multiple", 0, q - 1, min_count, None),
+                    # Low-quality groups next
+                    SheetConfig("Lq Multiple", 0, q - 1, min_count, None),
+                    SheetConfig("Lq Single", 0, q - 1, 1, 1),
                 ]
 
                 self.logger.info(
