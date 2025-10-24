@@ -44,6 +44,23 @@ def load_config(path: Optional[Path], overrides: Optional[ConfigOverrides] = Non
 
     # Coerce booleans from strings if needed (Windows/CLI friendliness)
     for key in ("strict_fail", "make_per_species_sheets"):
-        if key in data and isinstance(data[key], str):
-            data[key] = data[key].strip().lower() in {"1", "true", "yes", "y"}
-    return Config(**cast(dict, data))
+        if key in data:
+            val = data.get(key)
+            if isinstance(val, str):
+                data[key] = val.strip().lower() in {"1", "true", "yes", "y"}
+
+    # Build Config explicitly with coercions for strict typing
+    defaults = Config()
+    cfg = Config(
+        pipeline_version=str(data.get("pipeline_version", defaults.pipeline_version)),
+        certainty_threshold=int(data.get("certainty_threshold", defaults.certainty_threshold)),
+        frequency_min=int(data.get("frequency_min", defaults.frequency_min)),
+        site_mode=str(data.get("site_mode", defaults.site_mode)),
+        strict_fail=bool(data.get("strict_fail", defaults.strict_fail)),
+        make_per_species_sheets=bool(
+            data.get("make_per_species_sheets", defaults.make_per_species_sheets)
+        ),
+        max_errors=int(data.get("max_errors", defaults.max_errors)),
+        pipeline_stage=str(data.get("pipeline_stage", defaults.pipeline_stage)),
+    )
+    return cfg

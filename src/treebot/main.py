@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 
 from .config import Config, load_config
+from .types import ConfigOverrides
 from .app.container import build_container
 from .app.orchestrator import Orchestrator
 
@@ -66,12 +67,12 @@ def main() -> int:
     )
     args = ap.parse_args()
 
-    overrides = {
-        "max_errors": args.max_errors,
-        # Map CLI names to existing config keys
-        "certainty_threshold": args.quality_threshold,
-        "frequency_min": args.min_count,
-    }
+    overrides: ConfigOverrides = {"max_errors": int(args.max_errors)}
+    # Optional overrides only when provided
+    if args.quality_threshold is not None:
+        overrides["certainty_threshold"] = int(args.quality_threshold)
+    if args.min_count is not None:
+        overrides["frequency_min"] = int(args.min_count)
     if args.stage:
         overrides["pipeline_stage"] = args.stage
     cfg = load_config(args.config, overrides=overrides)
