@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal, Optional, cast
+from typing import Literal, Optional, cast, Mapping
 
 import pandas as pd
 import yaml
@@ -76,7 +76,7 @@ def detect_schema(df: pd.DataFrame) -> SchemaName:
     raise ValueError("no_schema_detected")
 
 
-def write_excel(sheets: dict[str, pd.DataFrame], out_path: Path) -> None:
+def write_excel(sheets: Mapping[str, pd.DataFrame], out_path: Path) -> None:
     """Write multiple DataFrames to Excel as native Tables with default Excel style.
 
     - Ensures new-schema column order
@@ -309,7 +309,7 @@ class IOService:
         self.logger.info("Parsed mapping", extra={"rows": 0 if df is None else len(df)})
         return df
 
-    def write_output(self, sheets: dict[str, pd.DataFrame], out_path: Path) -> None:
+    def write_output(self, sheets: Mapping[str, pd.DataFrame], out_path: Path) -> None:
         self.logger.info(
             f"Writing {out_path.name}", extra={"path": str(out_path), "sheets": len(sheets)}
         )

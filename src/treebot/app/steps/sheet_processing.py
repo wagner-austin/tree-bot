@@ -5,6 +5,7 @@ import logging
 import pandas as pd
 
 from ...services.io_excel import InputSheet
+from typing import Mapping, Tuple
 from ...services.validate_service import ValidateService
 
 
@@ -12,7 +13,7 @@ def process_sheet(
     val: ValidateService,
     sh: InputSheet,
     logger: logging.Logger,
-    species_map: dict[tuple[str, str], str] | None = None,
+    species_map: Mapping[Tuple[str, str], str] | None = None,
 ) -> pd.DataFrame:
     """Normalize headers and basic cleanup."""
     df = val.normalize_headers(sh.df.copy(), sh.schema)

@@ -7,6 +7,7 @@ import yaml
 
 from ..io_excel import SchemaName
 from ...types import SchemaConfig
+from typing import MutableMapping, Mapping
 
 
 _schema_config: SchemaConfig | None = None
@@ -29,7 +30,7 @@ def normalize_headers(df: pd.DataFrame, schema: SchemaName) -> pd.DataFrame:
     2. Apply column aliases (e.g., "Sample Type" → "Species")
     """
     config = _load_schema_config()
-    rename_map: dict[str, str] = {}
+    rename_map: MutableMapping[str, str] = {}
 
     # Step 1: Strip unit suffixes from all columns
     strip_suffixes: list[str] = config["strip_suffixes"]
@@ -43,8 +44,8 @@ def normalize_headers(df: pd.DataFrame, schema: SchemaName) -> pd.DataFrame:
             rename_map[col] = col_clean
 
     # Step 2: Apply column aliases
-    aliases: dict[str, list[str]] = config["aliases"]
-    alias_map: dict[str, str] = {}
+    aliases: Mapping[str, list[str]] = config["aliases"]
+    alias_map: MutableMapping[str, str] = {}
     for canonical, variants in aliases.items():
         for variant in variants:
             alias_map[variant.lower()] = canonical

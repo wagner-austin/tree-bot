@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import re
 import unicodedata
-from typing import Final
+from typing import Final, Mapping
 
 
 # Map common Greek letters to ASCII tokens
-_GREEK_MAP: Final[dict[str, str]] = {
+_GREEK_MAP: Final[Mapping[str, str]] = {
     "α": "alpha",
     "β": "beta",
     "γ": "gamma",
@@ -86,7 +86,7 @@ _STEREOCHEM_PAREN_RE = re.compile(r"\((?:r|s|e|z|cis|trans)\)")
 #
 
 # Embedded-safe corrections: specific substrings safe to fix mid-word
-_EMBEDDED_TYPO_MAP: Final[dict[str, str]] = {
+_EMBEDDED_TYPO_MAP: Final[Mapping[str, str]] = {
     # Halogen/fluoro family (appear in trifluoromethyl, perfluorooctane, etc.)
     "trulfuoro": "trifluoro",
     "trilfluoro": "trifluoro",
@@ -117,7 +117,7 @@ _EMBEDDED_TYPO_MAP: Final[dict[str, str]] = {
 }
 
 # Token-bounded corrections: only match when typo is a complete token
-_TOKEN_TYPO_MAP: Final[dict[str, str]] = {
+_TOKEN_TYPO_MAP: Final[Mapping[str, str]] = {
     # Benzene family (avoid matching inside correct 'benzene...')
     "benzen": "benzene",  # standalone 'benzen' → 'benzene'
     "bezene": "benzene",

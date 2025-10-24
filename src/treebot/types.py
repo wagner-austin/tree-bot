@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from typing import TypedDict, Optional
+from typing import TypedDict, Optional, Mapping
 
 
 class SchemaConfig(TypedDict):
     version: str
     strip_suffixes: list[str]
-    aliases: dict[str, list[str]]
+    aliases: Mapping[str, list[str]]
     old_schema: list[str]
     new_schema: list[str]
 
@@ -87,4 +87,3 @@ class SectionStats(TypedDict):
     total_peaks: int
     unique_compounds_all: int
     peaks_all: int
-

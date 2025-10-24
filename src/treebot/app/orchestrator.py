@@ -52,7 +52,8 @@ class Orchestrator:
             # 2. Load class map
             class_map = val.load_class_map(classes_path)
             # 2b. Load species map (optional)
-            species_map: dict[tuple[str, str], str] | None = None
+            from typing import Mapping, Tuple
+            species_map: Mapping[Tuple[str, str], str] | None = None
             if mapping_path is not None:
                 try:
                     species_map, _amb = val.load_species_map(mapping_path)
@@ -62,7 +63,8 @@ class Orchestrator:
                     )
 
             # 3. Process sheets: normalize headers + transform oldÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢new
-            all_processed: dict[str, pd.DataFrame] = {}
+            from typing import MutableMapping
+            all_processed: MutableMapping[str, pd.DataFrame] = {}
 
             for sheet in sheets:
                 self.logger.info(f"Processing sheet: {sheet.name} (schema={sheet.schema})")
